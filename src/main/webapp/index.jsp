@@ -63,7 +63,7 @@
 
 <div class="container">
 
-    <img src="images/header.png"/>
+    <img src="images/header.png" />
 
 
 <%--        Bare lige se I har en ide om hvad vi forslå I ikke gør ! det hedder scpript lets --%>
@@ -74,7 +74,7 @@
 <%--           }--%>
 <%--        %>--%>
 
-    <div class="jumbotron">
+    <div class="jumbotron mr-5 mt-20 mt-lg-0">
     <h1 class="display-4">Velkommen til Olsker Cupcakes!</h1>
     <p class="lead">
         Olsker Cupcakes er endnu et dybdeøkologisk iværksættereventyr fra Bornholm, som har ramt den helt rigtige opskrift.
