@@ -44,7 +44,7 @@
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <a class="nav-link" href="#"><h3>Cupcakes</h3></a>
+                        <a class="nav-link" href="WEB-INF/cupcakes.jsp"><h3>Cupcakes</h3></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">

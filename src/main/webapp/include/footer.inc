@@ -1,6 +1,6 @@
 <br>
 <div class="card">
-    <img src="images/footer.png" class="card-img"">
+    <img src="images/footer.png" class="img-fluid">
     <div class="card-img-overlay">
         <div class="row">
             <div class="col-lg-9"></div>
