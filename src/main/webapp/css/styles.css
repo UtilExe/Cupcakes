@@ -95,3 +95,9 @@
     background: #0062cc;
     color: #fff;
 }
+
+@media only screen and (max-width: 800px) {
+    .dropdown-menu {
+        left: -0px !important;
+    }
+}
