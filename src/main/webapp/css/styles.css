@@ -83,3 +83,18 @@
         border-top:0 none;
     }
 }
+#lists {
+    overflow: auto;
+    width: 300px;
+}
+#list-one{
+    float: left;
+}
+
+#list-two{
+    float: ;
+}
+
+#list-three{
+    float: right;
+}
