@@ -7,25 +7,9 @@
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@include file="/include/header.inc"%>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Welcome page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <%-- Håndterer bl.a. responsiv delen af navigation baren, dvs. at menu-knappen (på mindre devices) virker. --%>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-            crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 </head>
 <body>
@@ -40,7 +24,7 @@
         <ul class="navbar-nav mr-auto">
             <ul class="navbar-nav mr-5 mt-60 mt-lg-0">
                 <div class="col-lg-auto">
-                   
+
                         <a class="nav-link" href="FrontController?target=redirect&destination=index"><h3>Forside</h3> <span class="sr-only">(current)</span></a>
                 </div>
 
@@ -87,19 +71,58 @@
     <%--        %>--%>
 
     <div class="jumbotron mr-5 mt-20 mt-lg-0">
-        <h1 class="display-4">Velkommen til Olsker Cupcakes!</h1>
-        <p class="lead">
-            Olsker Cupcakes er endnu et dybdeøkologisk iværksættereventyr fra Bornholm, som har ramt den helt rigtige
-            opskrift.
-            Små lækre cupcakes eller muffins er skønne, som portionsservering af dejlige kageopskrifter. Sådan en
-            cupcake passer perfekt
-            til et koldt glas mælk en eftermiddag, eller til en varm kop kaffe, som dessert efter et godt måltid.
-            Jeg synes det er vigtigt at selve kagen i en cupkage smager vidunderligt – det nytter ikke noget bare at
-            pynte den flot … egentlig er jeg ikke den store kagepynter og det er ret begrænset, hvad der er af
-            kagepyntsinspiration, fondant og den slags her på bloggen, men grunddelen – selve muffinskagen – er i top,
-            og så må du endelig pynte den lige som du har lyst.
-
+        <h1 class="display-4 text-center">Byg din egen Cupcake!</h1>
+        <p class="lead text-left">
+            Her har du mulighed for at bygge din egen cupcake - vælg din favorit top og bund.
         </p>
+    </div>
+    <p class = text-center>
+
+        <select id = "bund">
+            <option value ="Vælg Bund">Vælg Bund</option>
+            <option value = "1">blåbær</option>
+            <option value = "2">vanilje</option>
+            <option value = "3">three</option>
+            <option value = "4">four</option>
+        </select>
+
+        <select id = "topping">
+            <option value ="Vælg Topping">Vælg Topping</option>
+            <option value = "1">choko</option>
+            <option value = "2">creme de la creme</option>
+            <option value = "3">three</option>
+            <option value = "4">four</option>
+        </select>
+
+        <select id = "antal">
+            <option value ="Vælg Antal">Vælg Antal</option>
+            <option value = "1">5</option>
+            <option value = "2">7</option>
+            <option value = "3">12</option>
+            <option value = "4">15</option>
+        </select>
+    </p>
+
+    <!-- Example split danger button -->
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-danger">Ahhction</button>
+        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+    </div>
+
+    <div class="text-right">
+
+    <a class="btn btn-primary" href="#" role="button">Læg i kurv</a>
+
     </div>
 
     <c:if test="${requestScope.error!= null}">
