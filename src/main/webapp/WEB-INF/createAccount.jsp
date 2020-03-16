@@ -11,7 +11,7 @@
 
 <!DOCTYPE html>
 <html>
-<%@include file="../include/header.inc"%>
+<%@include file="../include/header.inc" %>
 <link rel="stylesheet" href="css/styles.css">
 <body>
 
@@ -31,16 +31,19 @@
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>Cupcakes</h3></a>
+                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>
+                            Cupcakes</h3></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                                <a class="nav-link" href="FrontController?target=redirect&destination=kontakt"><h3>Kontakt</h3></a>
+                                <a class="nav-link" href="FrontController?target=redirect&destination=kontakt"><h3>
+                                    Kontakt</h3></a>
                                 </li>
                                 <li class="nav-item">
                                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                         <div class="col-lg-5">
-                                            <a class="nav-link" href="FrontController?target=redirect&destination=kurv"><h3>Kurv</h3></a>
+                                            <a class="nav-link" href="FrontController?target=redirect&destination=kurv">
+                                                <h3>Kurv</h3></a>
                                         </div>
                                         </li>
                                     </ul>
@@ -50,9 +53,11 @@
         </ul>
 
         <span class="navbar-text mr-5">
+
       Email-adresse
     </span>
-        <a class="navbar-brand" href="#"> <img src="./images/foto.png" height="70" alt="Logo"></a>
+
+        <%@include file="../include/dropdownMenu.inc" %>
     </div>
 </nav>
 
@@ -71,7 +76,7 @@
 
 
     <div class="jumbotron mr-5 mt-20 mt-lg-0">
-        <h1 class="display-4" style = "text-align: center">Her kan du oprette en profil</h1>
+        <h1 class="display-4" style="text-align: center">Her kan du oprette en profil</h1>
         <div class="container register-form">
             <div class="form">
 
@@ -88,20 +93,22 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group"> Dit fulde navn
-                                <input type="text" class="form-control" placeholder="Indtast dit for & efternavn *" value=""/>
+                                <input type="text" class="form-control" placeholder="Indtast dit for & efternavn *"
+                                       value=""/>
                             </div>
                             <div class="form-group"> Dit telefon-nummer
-                                <input type="text" class="form-control" placeholder="Indtast dit telefon-nummer *" value=""/>
+                                <input type="text" class="form-control" placeholder="Indtast dit telefon-nummer *"
+                                       value=""/>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btnSubmit" style = "text-align: center">Submit</button>
+                    <button type="submit" class="btnSubmit" style="text-align: center">Submit</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-    <%@include file="../include/footer.inc"%>
+<%@include file="../include/footer.inc" %>
 
 
