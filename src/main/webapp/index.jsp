@@ -1,4 +1,5 @@
 <%@include file="include/header.inc"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
     <title>Welcome page</title>
 
 </head>
