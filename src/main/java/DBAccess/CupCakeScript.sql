@@ -42,20 +42,20 @@ CREATE TABLE `cupcake`.`orderlines` (
   `toppingID` INT NOT NULL,
   `bottomID` INT NOT NULL,
   PRIMARY KEY (`detailsID`),
-  INDEX `fk_orderdetails_orderID_idx` (`orderID` ASC) VISIBLE,
-  INDEX `fk_orderdetails_toppingID_idx` (`toppingID` ASC) VISIBLE,
-  INDEX `fk_orderdetails_bottomID_idx` (`bottomID` ASC) VISIBLE,
-  CONSTRAINT `fk_orderdetails_orderID`
+  INDEX `fk_orderlines_orderID_idx` (`orderID` ASC) VISIBLE,
+  INDEX `fk_orderlines_toppingID_idx` (`toppingID` ASC) VISIBLE,
+  INDEX `fk_orderlines_bottomID_idx` (`bottomID` ASC) VISIBLE,
+  CONSTRAINT `fk_orderlines_orderID`
     FOREIGN KEY (`orderID`)
     REFERENCES `cupcake`.`orders` (`orderID`)
     ON DELETE CASCADE
     ON UPDATE RESTRICT,
-  CONSTRAINT `fk_orderdetails_toppingID`
+  CONSTRAINT `fk_orderlines_toppingID`
     FOREIGN KEY (`toppingID`)
     REFERENCES `cupcake`.`topping` (`idTopping`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_orderdetails_bottomID`
+  CONSTRAINT `fk_orderlines_bottomID`
     FOREIGN KEY (`bottomID`)
     REFERENCES `cupcake`.`bottom` (`idbottom`)
     ON DELETE NO ACTION
