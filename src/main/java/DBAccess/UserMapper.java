@@ -65,10 +65,8 @@ public class UserMapper {
     public static void supportMessage(String email, String msg) {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO cupcake.support VALUES (0, ?, ?);";
+            String SQL = "INSERT INTO cupcake.support VALUES (0, '"+msg+"', '"+email+"');";
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1, msg);
-            ps.setString(2, email);
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();

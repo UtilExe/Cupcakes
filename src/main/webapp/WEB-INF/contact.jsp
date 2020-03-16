@@ -49,19 +49,19 @@
     </div>
 </nav>
 
-<form name="support" action="FrontController" method="POST">
-    <input type="hidden" name="target" value="support">
-    <div class="row">
+<form name="contact" action="FrontController" method="POST">
+    <input type="hidden" name="target" value="contact">
+    <div class="row mt-4">
         <div class="col-3"></div>
         <div class="form-group col-6">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
         </div>
         <div class="col-3"></div>
         <div class="col-3"></div>
         <div class="form-group col-6">
             <label for="textArea">Example textarea</label>
-            <textarea class="form-control" id="textArea" rows="8"></textarea>
+            <textarea name="message" class="form-control" id="textArea" rows="8"></textarea>
         </div>
         <div class="col-3"></div>
     </div>
