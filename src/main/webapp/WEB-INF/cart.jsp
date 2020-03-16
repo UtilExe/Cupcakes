@@ -72,21 +72,13 @@
         <div class="container" style="border: 1px solid #A3A3A3;">
             <div class="container">
                 <ul>
-                    <li class="lead" style="padding-bottom: 30%; margin-bottom: 0;">Cupcakes bliver printet her...</li>
+                    <li class="lead" style="padding-bottom: 20%; margin-bottom: 0;">Cupcakes bliver printet her...</li>
                 </ul>
             </div>
 
-            <!--
-            <div class="nedreKurv">
-                <span class="input-group-text" id="basic-addon1" style="background-color: darkslategrey; color: white;">Samlet Pris:</span>
-                <span class="input-group-text" style="background-color: white; padding-left: 100px;"> kr.</span>
-                <input type="submit" class="btnSubmit" value="Betal">
-            </div>
-            -->
-
             <div class="row">
-                <div class="col-lg-8 col-md-4 col-sm-2"></div>
-                <div class="col-lg-4 col-md-8 col-sm-10">
+                <div class="col-xl-8 col-lg-7 col-md-4 col-sm-2"></div>
+                <div class="col-xl-4 col-lg-5 col-md-8 col-sm-10">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="background-color: darkslategrey; color: white;">Samlet Pris:</span>
