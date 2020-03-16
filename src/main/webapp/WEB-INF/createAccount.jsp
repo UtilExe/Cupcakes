@@ -11,24 +11,8 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Welcome page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <%-- Håndterer bl.a. responsiv delen af navigation baren, dvs. at menu-knappen (på mindre devices) virker. --%>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-            crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-</head>
-
+<%@include file="../include/header.inc"%>
+<link rel="stylesheet" href="css/styles.css">
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
@@ -85,24 +69,39 @@
     <%--           }--%>
     <%--        %>--%>
 
-    <div class="jumbotron mr-5 mt-20 mt-lg-0">
-        <h1 class="display-4">Her kan du oprette en profil</h1>
-        <p class="lead">
-            Olsker Cupcakes er endnu et dybdeøkologisk iværksættereventyr fra Bornholm, som har ramt den helt rigtige
-            opskrift.
-            Små lækre cupcakes eller muffins er skønne, som portionsservering af dejlige kageopskrifter. Sådan en
-            cupcake passer perfekt
-            til et koldt glas mælk en eftermiddag, eller til en varm kop kaffe, som dessert efter et godt måltid.
-            Jeg synes det er vigtigt at selve kagen i en cupkage smager vidunderligt – det nytter ikke noget bare at
-            pynte den flot … egentlig er jeg ikke den store kagepynter og det er ret begrænset, hvad der er af
-            kagepyntsinspiration, fondant og den slags her på bloggen, men grunddelen – selve muffinskagen – er i top,
-            og så må du endelig pynte den lige som du har lyst.
 
-        </p>
+    <div class="jumbotron mr-5 mt-20 mt-lg-0">
+        <h1 class="display-4" style = "text-align: center">Her kan du oprette en profil</h1>
+        <div class="container register-form">
+            <div class="form">
+
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group"> E-mail adresse
+                                <input type="text" class="form-control" placeholder="Indtast email *" value=""/>
+                            </div>
+                            <div class="form-group"> Dit kodeord
+                                <input type="password" class="form-control" placeholder="Indtast kodeord *" value=""/>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"> Dit fulde navn
+                                <input type="text" class="form-control" placeholder="Indtast dit for & efternavn *" value=""/>
+                            </div>
+                            <div class="form-group"> Dit telefon-nummer
+                                <input type="text" class="form-control" placeholder="Indtast dit telefon-nummer *" value=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btnSubmit" style = "text-align: center">Submit</button>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
     <%@include file="../include/footer.inc"%>
 
-</body>
-</html>
 
