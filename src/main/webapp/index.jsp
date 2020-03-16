@@ -44,7 +44,7 @@
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <a class="nav-link" href="#"><h3>Cupcakes</h3></a>
+                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>Cupcakes</h3></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
@@ -69,7 +69,7 @@
     </div>
 </nav>
 
-<div class="container jumbotron mr-5 mt-20 mt-lg-0 ">
+<div class="container jumbotron ">
 
     <img src="images/header.png" class="img-fluid" alt="Responsive header image"/>
 
