@@ -1,29 +1,9 @@
-<%--
-    Document   : index
-    Created on :
-    Author     :
---%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="../include/header.inc" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
+<link rel="stylesheet" href="css/styles.css">
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Kurv</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <%-- Håndterer bl.a. responsiv delen af navigation baren, dvs. at menu-knappen (på mindre devices) virker. --%>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-            crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Kurv</title>
 
 </head>
 <body>
@@ -38,22 +18,26 @@
         <ul class="navbar-nav mr-auto">
             <ul class="navbar-nav mr-5 mt-60 mt-lg-0">
                 <div class="col-lg-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><h3>Forside</h3> <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrontController?target=redirect&destination=index"><h3>Forside</h3>
+                        </a>
                 </div>
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>Cupcakes</h3></a>
+                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>
+                            Cupcakes</h3><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                                <a class="nav-link" href="FrontController?target=redirect&destination=contact"><h3>Kontakt</h3></a>
+                                <a class="nav-link" href="FrontController?target=redirect&destination=contact"><h3>
+                                    Kontakt</h3></a>
                                 </li>
                                 <li class="nav-item">
                                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                         <div class="col-lg-5">
-                                            <a class="nav-link" href="FrontController?target=redirect&destination=cart"><h3>Kurv</h3></a>
+                                            <a class="nav-link" href="FrontController?target=redirect&destination=cart">
+                                                <h3>Kurv</h3></a>
                                         </div>
                                         </li>
                                     </ul>
@@ -84,17 +68,19 @@
 
     <div class="jumbotron mr-5 mt-20 mt-lg-0">
         <h1 class="display-4">Her er Deres indkøbskurv</h1>
-        <p class="lead">
-            Olsker Cupcakes er endnu et dybdeøkologisk iværksættereventyr fra Bornholm, som har ramt den helt rigtige
-            opskrift.
-            Små lækre cupcakes eller muffins er skønne, som portionsservering af dejlige kageopskrifter. Sådan en
-            cupcake passer perfekt
-            til et koldt glas mælk en eftermiddag, eller til en varm kop kaffe, som dessert efter et godt måltid.
-            Jeg synes det er vigtigt at selve kagen i en cupkage smager vidunderligt – det nytter ikke noget bare at
-            pynte den flot … egentlig er jeg ikke den store kagepynter og det er ret begrænset, hvad der er af
-            kagepyntsinspiration, fondant og den slags her på bloggen, men grunddelen – selve muffinskagen – er i top,
-            og så må du endelig pynte den lige som du har lyst.
-        </p>
+        <div class="container" style="border: 1px solid #A3A3A3;">
+            <div>
+                <form>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Samlet Pris:</span>
+                        </div>
+                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                    <input class="btnSubmit" type="submit" value="Betal">
+                </form>
+            </div>
+        </div>
     </div>
 
     <c:if test="${requestScope.error!= null}">
@@ -105,4 +91,4 @@
     </c:if>
 </div>
 
-<%@include file="../include/footer.inc"%>
+<%@include file="../include/footer.inc" %>
