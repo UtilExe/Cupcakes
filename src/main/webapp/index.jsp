@@ -48,12 +48,12 @@
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                                <a class="nav-link" href="#"><h3>Kontakt</h3></a>
+                                <a class="nav-link" href="FrontController?target=redirect&destination=kontakt"><h3>Kontakt</h3></a>
                                 </li>
                                 <li class="nav-item">
                                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                         <div class="col-lg-5">
-                                            <a class="nav-link" href="#"><h3>Kurv</h3></a>
+                                            <a class="nav-link" href="FrontController?target=redirect&destination=kurv"><h3>Kurv</h3></a>
                                         </div>
                                         </li>
                                     </ul>
