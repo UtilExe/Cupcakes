@@ -83,3 +83,15 @@
         border-top:0 none;
     }
 }
+
+.btnSubmitKurv
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 20px;
+    border:none;
+    border-radius:1.5rem;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
