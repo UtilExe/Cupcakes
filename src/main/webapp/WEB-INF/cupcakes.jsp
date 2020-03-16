@@ -80,7 +80,7 @@
         </p>
 
         <div class="row">
-            <div class="col-3"></div>
+            <div class="col-1"></div>
             <div class="col-3">
                 <select id="bund">
                     <option value="Vælg Bund">Vælg Bund</option>
@@ -108,13 +108,13 @@
                     <option value="4">15</option>
                 </select>
             </div>
+            <div class="text-right">
+
+                <a class="btn btn-primary" href="#" role="button">Læg i kurv</a>
+
+            </div>
         </div>
 
-        <div class="text-right">
-
-            <a class="btn btn-primary" href="#" role="button">Læg i kurv</a>
-
-        </div>
     </div>
 
 
