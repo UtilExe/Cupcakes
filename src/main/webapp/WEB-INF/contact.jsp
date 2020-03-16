@@ -8,10 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Kontakt</title>
 </head>
 <body>
-test kontakt
 
-</body>
-</html>
+
+<%@include file="../include/footer.inc"%>
