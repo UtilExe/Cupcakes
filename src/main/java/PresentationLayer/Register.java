@@ -11,20 +11,27 @@ public class Register extends Command {
 
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+        String username = request.getParameter( "username" );
         String email = request.getParameter( "email" );
-        String password1 = request.getParameter( "password1" );
-        String password2 = request.getParameter( "password2" );
-       if ( password1.equals( password2 ) ) {
-            User user = LogicFacade.createUser( email, password1 );
+        String password = request.getParameter( "password" );
+        int mobilNr;
+            mobilNr = Integer.parseInt(request.getParameter("mobilNr"));
+
+        try {
+            User user = LogicFacade.createUser(username, email, password, mobilNr);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
             HttpSession session = request.getSession();
 
-            session.setAttribute("email",email);
+        request.setAttribute("username", username);
+        request.setAttribute("email", email);
+        request.setAttribute("password", password);
+        request.setAttribute("mobilNr", mobilNr);
+          /*  session.setAttribute("email",email);
             session.setAttribute( "user", user );
-            session.setAttribute( "role", user.getRole() );
-            return user.getRole() + "page";
-        } else {
-            throw new LoginSampleException( "the two passwords did not match" );
+
+           */
+            return "";
         }
     }
-
-}
