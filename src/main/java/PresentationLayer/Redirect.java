@@ -1,8 +1,7 @@
 package PresentationLayer;
 
-import FunctionLayer.Bottoms;
+import FunctionLayer.Kode;
 import FunctionLayer.LoginSampleException;
-import FunctionLayer.Toppings;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,8 +13,8 @@ public class Redirect extends Command {
         String destination = request.getParameter("destination");
 
         if(destination.equals("cupcakes")) {
-            request.setAttribute("toppings", Toppings.getToppingList());
-            request.setAttribute("bottoms", Bottoms.getBottomsList());
+            request.setAttribute("toppings", Kode.getToppingList());
+            request.setAttribute("bottoms", Kode.getBottomsList());
         }
 
         return destination;
