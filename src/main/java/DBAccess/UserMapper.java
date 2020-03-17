@@ -94,7 +94,6 @@ public class UserMapper {
             con.close();
             ps.close();
             rs.close();
-            return toppingList;
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
         }
@@ -117,11 +116,11 @@ public class UserMapper {
             con.close();
             ps.close();
             rs.close();
-            return bottomList;
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
+            ex.printStackTrace();
         }
-        return bottomList;
+       return bottomList;
     }
 
 }
