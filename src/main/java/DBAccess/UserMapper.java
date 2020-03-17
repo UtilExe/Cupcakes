@@ -1,5 +1,6 @@
 package DBAccess;
 
+import FunctionLayer.Bottom;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Topping;
 import FunctionLayer.User;
@@ -93,10 +94,33 @@ public class UserMapper {
             con.close();
             ps.close();
             rs.close();
-            return toppingList;
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
         }
         return toppingList;
     }
+    public static ArrayList<Bottom> getBottom() {
+        ArrayList<Bottom> bottomList = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM cupcake.bottom;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int ID = rs.getInt("idBottom");
+                String name = rs.getString("navn");
+                int price = rs.getInt("pris");
+
+                bottomList.add(new Bottom(ID, name, price));
+            }
+            con.close();
+            ps.close();
+            rs.close();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Kan ikke kommunikere korrekt med databasen.");
+            ex.printStackTrace();
+        }
+       return bottomList;
+    }
+
 }

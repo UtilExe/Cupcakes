@@ -1,5 +1,6 @@
 package PresentationLayer;
 
+import FunctionLayer.Bottoms;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.Toppings;
 
@@ -14,6 +15,7 @@ public class Redirect extends Command {
 
         if(destination.equals("cupcakes")) {
             request.setAttribute("toppings", Toppings.getToppingList());
+            request.setAttribute("bottoms", Bottoms.getBottomsList());
         }
 
         return destination;

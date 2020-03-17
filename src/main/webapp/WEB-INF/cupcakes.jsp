@@ -87,20 +87,22 @@
 
 
                     <option value="Vælg Bund">Vælg Bund</option>
-                    <c:forEach var="ShowCupcakes" items="${requestScope.toppings}">
-                        <option value="ShowCupcakes">${topping.name} ${topping.price}></option>
+                   <c:forEach var="bottom" items="${bottoms}">
+                       <option> ${bottom.name}, ${bottom.price} kr.</option>
 
                     </c:forEach>
+
+
 
                 </select>
             </div>
             <div class="col-3">
                 <select id="topping">
                     <option value="Vælg Topping">Vælg Topping</option>
-                    <option value="1">choko</option>
-                    <option value="2">creme de la creme</option>
-                    <option value="3">three</option>
-                    <option value="4">four</option>
+                    <c:forEach var="topping" items="${toppings}">
+                        <option> ${topping.name}, ${topping.price} kr.</option>
+
+                    </c:forEach>
                 </select>
             </div>
             <div class="col-3">
