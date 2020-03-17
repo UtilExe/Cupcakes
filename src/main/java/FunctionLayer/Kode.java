@@ -2,7 +2,6 @@ package FunctionLayer;
 
 import DBAccess.UserMapper;
 import Objects.Bottom;
-import Objects.Cupcake;
 import Objects.Topping;
 
 import java.util.ArrayList;
@@ -12,7 +11,6 @@ public class Kode {
     //Creating lists
     private static List<Bottom> bottomList;
     private static List<Topping> toppingList;
-    private static ArrayList<Topping> cupcakeList;
 
     //Inits
     public static void initBottoms(){
@@ -25,11 +23,6 @@ public class Kode {
             toppingList = UserMapper.getTopping();
         }
     }
-    public static void initCupcakes(){
-        if (cupcakeList == null){
-            cupcakeList = UserMapper.getCupcakes();
-        }
-    }
 
     //Get lists
     public static List<Bottom> getBottomsList() {
@@ -37,8 +30,5 @@ public class Kode {
     }
     public static List<Topping> getToppingList() {
         return toppingList;
-    }
-    public static ArrayList<Topping> getCupcakeList() {
-        return cupcakeList;
     }
 }

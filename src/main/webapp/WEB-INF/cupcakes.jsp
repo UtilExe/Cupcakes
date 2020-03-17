@@ -85,14 +85,10 @@
             <div class="col-3">
                 <select id="bund">
 
-
                     <option value="Vælg Bund">Vælg Bund</option>
                    <c:forEach var="bottom" items="${bottoms}">
                        <option> ${bottom.name}, ${bottom.price} kr.</option>
-
                     </c:forEach>
-
-
 
                 </select>
             </div>
@@ -100,8 +96,7 @@
                 <select id="topping">
                     <option value="Vælg Topping">Vælg Topping</option>
                     <c:forEach var="topping" items="${toppings}">
-                        <option> ${topping.name}, ${topping.price} kr.</option>
-
+                        <option value="${topping.name}, ${topping.price}"> ${topping.name}, ${topping.price} kr.</option>
                     </c:forEach>
                 </select>
             </div>
@@ -113,6 +108,8 @@
                     <option value="3">12</option>
                     <option value="4">15</option>
                 </select>
+
+
             </div>
             <div class="text-right">
 

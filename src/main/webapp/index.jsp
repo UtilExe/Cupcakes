@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="FunctionLayer.Toppings" %>
-<%@ page import="FunctionLayer.Bottoms" %>
+<%@ page import="FunctionLayer.Kode" %>
+
 <%@include file="include/header.inc"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <title>Welcome page</title>
@@ -11,15 +11,15 @@
 <%!
     @Override
     public void jspInit(){
-        Toppings.initTopppings();
-        Bottoms.initBottoms();
+        Kode.initTopppings();
+        Kode.initBottoms();
 
     }
 %>
 
 <%
-    request.setAttribute("toppings",Toppings.getToppingList());
-    request.setAttribute("bottoms", Bottoms.getBottomsList());
+    request.setAttribute("toppings",Kode.getToppingList());
+    request.setAttribute("bottoms", Kode.getBottomsList());
 %>
 
 
