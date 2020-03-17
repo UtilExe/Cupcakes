@@ -79,15 +79,19 @@
             Her har du mulighed for at bygge din egen cupcake - vælg din favorit top og bund.
         </p>
 
+
         <div class="row">
             <div class="col-1"></div>
             <div class="col-3">
                 <select id="bund">
+
+
                     <option value="Vælg Bund">Vælg Bund</option>
-                    <option value="1">blåbær</option>
-                    <option value="2">vanilje</option>
-                    <option value="3">three</option>
-                    <option value="4">four</option>
+                    <c:forEach var="ShowCupcakes" items="${requestScope.toppings}">
+                        <option value="ShowCupcakes">${topping.name} ${topping.price}></option>
+
+                    </c:forEach>
+
                 </select>
             </div>
             <div class="col-3">
@@ -120,6 +124,12 @@
 
 </div>
 
+<ul>
+    <c:forEach var="topping" items="${toppings}">
+        <li> ${topping.price} ${topping.name}</li>
+
+    </c:forEach>
+</ul>
 
 <c:if test="${requestScope.error!= null}">
 

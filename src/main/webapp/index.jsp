@@ -1,9 +1,23 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="FunctionLayer.Toppings" %>
 <%@include file="include/header.inc"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <title>Welcome page</title>
 
 </head>
 <body>
+
+<%!
+    @Override
+    public void jspInit(){
+        Toppings.initTopppings();
+
+    }
+%>
+
+<%
+    request.setAttribute("toppings",Toppings.getToppingList());
+%>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
     <a class="navbar-brand" href="#"> <img src="./images/logo.png" width="100" height="60" alt="Logo"></a>
@@ -72,7 +86,14 @@
             kagepyntsinspiration, fondant og den slags her på bloggen, men grunddelen – selve muffinskagen – er i top,
             og så må du endelig pynte den lige som du har lyst.
 
+
         </p>
+        <ul>
+<c:forEach var="topping" items="${toppings}">
+    <li> ${topping.price} ${topping.name}</li>
+
+</c:forEach>
+        </ul>
     </div>
 
     <c:if test="${requestScope.error!= null}">

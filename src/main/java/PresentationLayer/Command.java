@@ -1,6 +1,8 @@
 package PresentationLayer;
 
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Toppings;
+
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +17,8 @@ abstract class Command {
         commands.put( "register", new Register() );
         commands.put("redirect", new Redirect());
         commands.put("contact", new Contact());
+        commands.put("ShowCupcakes", new ShowCupcakes());
+        commands.put("toppings", new Toppings());
     }
 
     static Command from( HttpServletRequest request ) {
