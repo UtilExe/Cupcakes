@@ -71,8 +71,8 @@
         <h1 class="display-4" style="text-align: center;">Her er Deres indkøbskurv</h1>
         <div class="container" style="border: 1px solid #A3A3A3;">
             <div class="container">
-                <ul>
-                    <li class="lead" style="padding-bottom: 20%; margin-bottom: 0;">Cupcakes bliver printet her...</li>
+                <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
+                    <li>Cupcakes bliver printet her...</li>
                 </ul>
             </div>
 
