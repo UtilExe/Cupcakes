@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="../include/header.inc" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
@@ -72,7 +73,9 @@
         <div class="container" style="border: 1px solid #A3A3A3;">
             <div class="container">
                 <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
-                    <li>Cupcakes bliver printet her...</li>
+                    <c:forEach var="topping" items="${toppings}">
+                    <li>Topping: ${topping}, Bund: ${bottom}, Kvantitet: ${quantity}, Pris: ${price}</li>
+                    </c:forEach>
                 </ul>
             </div>
 
