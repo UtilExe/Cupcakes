@@ -79,31 +79,33 @@
         <h1 class="display-4" style="text-align: center">Her kan du oprette en profil</h1>
         <div class="container register-form">
             <div class="form">
-
+                <form name="register" action="FrontController" method="POST">
+                    <input type="hidden" name="target" value="register">
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group"> E-mail adresse
-                                <input type="text" class="form-control" placeholder="Indtast email *" value=""/>
+                                <input type="text" class="form-control" name="email" placeholder="Indtast email *" value=""/>
                             </div>
                             <div class="form-group"> Dit kodeord
-                                <input type="password" class="form-control" placeholder="Indtast kodeord *" value=""/>
+                                <input type="password" class="form-control" name="password" placeholder="Indtast kodeord *" value=""/>
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="form-group"> Dit fulde navn
-                                <input type="text" class="form-control" placeholder="Indtast dit for & efternavn *"
+                                <input type="text" class="form-control" name="username" placeholder="Indtast dit for & efternavn *"
                                        value=""/>
                             </div>
                             <div class="form-group"> Dit telefon-nummer
-                                <input type="text" class="form-control" placeholder="Indtast dit telefon-nummer *"
+                                <input type="text" class="form-control" name="mobilNr" placeholder="Indtast dit telefon-nummer *"
                                        value=""/>
                             </div>
                         </div>
                     </div>
                     <button type="submit" class="btnSubmit" style="text-align: center">Submit</button>
                 </div>
+                    </form>
             </div>
         </div>
     </div>
