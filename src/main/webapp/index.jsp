@@ -42,7 +42,7 @@
         <span class="navbar-text mr-5">
       Email-adresse
     </span>
-        <a class="navbar-brand" href="#"> <img src="./images/foto.png" height="70" alt="Logo"></a>
+        <%@include file="/include/dropdownMenu.inc" %>
     </div>
 </nav>
 
