@@ -6,7 +6,7 @@ import FunctionLayer.Toppings;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/*
 public class ShowCupcakes extends Command {
 
     @Override
@@ -20,3 +20,4 @@ public class ShowCupcakes extends Command {
         return "ShowCupcakes";
     }
 }
+*/

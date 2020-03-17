@@ -91,14 +91,17 @@ public class UserMapper {
 
                 toppingList.add(new Topping(ID, name, price));
             }
-            con.close();
+
+            /*con.close();
             ps.close();
-            rs.close();
+            rs.close();*/
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
         }
         return toppingList;
     }
+
+
     public static ArrayList<Bottom> getBottom() {
         ArrayList<Bottom> bottomList = new ArrayList<>();
         try {
@@ -113,6 +116,7 @@ public class UserMapper {
 
                 bottomList.add(new Bottom(ID, name, price));
             }
+
             con.close();
             ps.close();
             rs.close();
@@ -120,7 +124,7 @@ public class UserMapper {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
             ex.printStackTrace();
         }
-       return bottomList;
+        return bottomList;
     }
 
 }

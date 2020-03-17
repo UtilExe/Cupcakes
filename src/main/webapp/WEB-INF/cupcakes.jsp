@@ -126,12 +126,6 @@
 
 </div>
 
-<ul>
-    <c:forEach var="topping" items="${toppings}">
-        <li> ${topping.price} ${topping.name}</li>
-
-    </c:forEach>
-</ul>
 
 <c:if test="${requestScope.error!= null}">
 
@@ -141,6 +135,6 @@
 </c:if>
 </div>
 
-
+</body>
 
 <%@include file="/include/footer.inc" %>

@@ -11,8 +11,8 @@ public class Cart extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-        ArrayList<Cupcake> cupcake = new ArrayList<Cupcake>();
-        request.setAttribute("cupcake", cupcake);
+       // ArrayList<Cupcake> cupcake = new ArrayList<Cupcake>();
+        //request.setAttribute("cupcake", cupcake);
 
         return "cart";
     }
