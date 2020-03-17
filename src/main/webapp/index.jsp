@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="FunctionLayer.Toppings" %>
+<%@ page import="FunctionLayer.Bottoms" %>
 <%@include file="include/header.inc"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <title>Welcome page</title>
@@ -11,13 +12,17 @@
     @Override
     public void jspInit(){
         Toppings.initTopppings();
+        Bottoms.initBottoms();
 
     }
 %>
 
 <%
     request.setAttribute("toppings",Toppings.getToppingList());
+    request.setAttribute("bottoms", Bottoms.getBottomsList());
 %>
+
+
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
     <a class="navbar-brand" href="#"> <img src="./images/logo.png" width="100" height="60" alt="Logo"></a>
@@ -94,6 +99,12 @@
 
 </c:forEach>
         </ul>
+
+        <c:forEach var="bottom" items="${bottoms}">
+          ${bottom.name}, ${bottom.price} kr.
+
+        </c:forEach>
+
     </div>
 
     <c:if test="${requestScope.error!= null}">

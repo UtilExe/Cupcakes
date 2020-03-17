@@ -1,22 +1,22 @@
 package FunctionLayer;
 
-public class Topping {
-    private int topping_id;
+public class Bottom {
+    private int ID;
     private String name;
     private int price;
 
-    public Topping(int topping_id, String name, int price) {
-        this.topping_id = topping_id;
+    public Bottom(int ID, String name, int price) {
+        this.ID = ID;
         this.name = name;
         this.price = price;
     }
 
-    public int getTopping_id() {
-        return topping_id;
+    public int getID() {
+        return ID;
     }
 
-    public void setTopping_id(int topping_id) {
-        this.topping_id = topping_id;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getName() {
