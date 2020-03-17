@@ -1,17 +1,21 @@
 package DBAccess;
 
 import FunctionLayer.LoginSampleException;
+import FunctionLayer.Topping;
 import FunctionLayer.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- The purpose of UserMapper is to...
-
- @author kasper
+ * The purpose of UserMapper is to...
+ *
+ * @author kasper
  */
 public class UserMapper {
 
@@ -23,7 +27,7 @@ public class UserMapper {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getPassword());
-            ps.setInt(   4, user.getMobilNr());
+            ps.setInt(4, user.getMobilNr());
             ps.executeUpdate();
             ResultSet rs = ps.executeQuery();
             con.close();
@@ -64,11 +68,35 @@ public class UserMapper {
     public static void supportMessage(String email, String msg) {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO cupcake.support VALUES (0, '"+msg+"', '"+email+"');";
+            String SQL = "INSERT INTO cupcake.support VALUES (0, '" + msg + "', '" + email + "');";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static ArrayList<Topping> getTopping() {
+        ArrayList<Topping> toppingList = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM cupcake.topping;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int ID = rs.getInt("idTopping");
+                String name = rs.getString("navn");
+                int price = rs.getInt("pris");
+
+                toppingList.add(new Topping(ID, name, price));
+            }
+            con.close();
+            ps.close();
+            rs.close();
+            return toppingList;
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Kan ikke kommunikere korrekt med databasen.");
+        }
+        return toppingList;
     }
 }
