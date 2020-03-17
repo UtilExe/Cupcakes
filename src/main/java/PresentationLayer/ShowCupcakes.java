@@ -1,11 +1,5 @@
 package PresentationLayer;
 
-import FunctionLayer.Bottoms;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.Toppings;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 /*
 public class ShowCupcakes extends Command {
 

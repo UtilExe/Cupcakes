@@ -1,7 +1,6 @@
 package PresentationLayer;
 
 import FunctionLayer.LoginSampleException;
-import FunctionLayer.Toppings;
 
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
