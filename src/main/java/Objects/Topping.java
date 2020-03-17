@@ -1,22 +1,22 @@
 package Objects;
 
 public class Topping {
-    private int topping_id;
+    private int id;
     private String name;
     private int price;
 
-    public Topping(int topping_id, String name, int price) {
-        this.topping_id = topping_id;
+    public Topping(int id, String name, int price) {
+        this.id = id;
         this.name = name;
         this.price = price;
     }
 
-    public int getTopping_id() {
-        return topping_id;
+    public int getID() {
+        return id;
     }
 
-    public void setTopping_id(int topping_id) {
-        this.topping_id = topping_id;
+    public void setID(int id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -106,6 +106,7 @@
                 </select>
             </div>
             <div class="col-3">
+                <!--
                 <select id="antal">
                     <option value="Vælg Antal">Vælg Antal</option>
                     <option value="1">5</option>
@@ -113,10 +114,12 @@
                     <option value="3">12</option>
                     <option value="4">15</option>
                 </select>
+                -->
+                <input name="antal" type="text" id="antal" placeholder="Skriv antal...">
             </div>
             <div class="text-right">
 
-                <a class="btn btn-primary" href="#" role="button">Læg i kurv</a>
+                <a class="btn btn-primary" type="submit" name="addToCart" href="#" role="button">Læg i kurv</a>
 
             </div>
         </div>

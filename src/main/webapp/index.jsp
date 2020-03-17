@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="FunctionLayer.Toppings" %>
-<%@ page import="FunctionLayer.Bottoms" %>
+<%@ page import="FunctionLayer.CupcakeFunctions" %>
 <%@include file="include/header.inc"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <title>Welcome page</title>
@@ -11,15 +10,14 @@
 <%!
     @Override
     public void jspInit(){
-        Toppings.initTopppings();
-        Bottoms.initBottoms();
-
+        CupcakeFunctions.initTopppings();
+        CupcakeFunctions.initBottoms();
     }
 %>
 
 <%
-    request.setAttribute("toppings",Toppings.getToppingList());
-    request.setAttribute("bottoms", Bottoms.getBottomsList());
+    request.setAttribute("toppings", CupcakeFunctions.getToppingList());
+    request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());
 %>
 
 
@@ -93,17 +91,6 @@
 
 
         </p>
-        <ul>
-<c:forEach var="topping" items="${toppings}">
-    <li> ${topping.price} ${topping.name}</li>
-
-</c:forEach>
-        </ul>
-
-        <c:forEach var="bottom" items="${bottoms}">
-          ${bottom.name}, ${bottom.price} kr.
-
-        </c:forEach>
 
     </div>
 

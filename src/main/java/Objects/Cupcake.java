@@ -1,71 +1,42 @@
 package Objects;
 
+import DBAccess.UserMapper;
+import PresentationLayer.Redirect;
+
 public class Cupcake {
 
-    private int toppingID;
-    private String toppingName;
-    private int toppingPrice;
-    private int bottomID;
-    private String bottomName;
-    private int bottomPrice;
+    private Topping topping;
+    private Bottom bottom;
     private int quantity;
 
-    public Cupcake(int toppingID, String toppingName, int toppingPrice, int bottomID, String bottomName, int bottomPrice, int quantity) {
-        this.toppingID = toppingID;
-        this.toppingName = toppingName;
-        this.toppingPrice = toppingPrice;
-        this.bottomID = bottomID;
-        this.bottomName = bottomName;
-        this.bottomPrice = bottomPrice;
+    public Cupcake(Topping topping, Bottom bottom, int quantity) {
+        this.topping = topping;
+        this.bottom = bottom;
         this.quantity = quantity;
     }
 
     public int getToppingID() {
-        return toppingID;
-    }
-
-    public void setToppingID(int toppingID) {
-        this.toppingID = toppingID;
+        return topping.getID();
     }
 
     public String getToppingName() {
-        return toppingName;
-    }
-
-    public void setToppingName(String toppingName) {
-        this.toppingName = toppingName;
+        return topping.getName();
     }
 
     public int getToppingPrice() {
-        return toppingPrice;
-    }
-
-    public void setToppingPrice(int toppingPrice) {
-        this.toppingPrice = toppingPrice;
+        return topping.getPrice();
     }
 
     public int getBottomID() {
-        return bottomID;
-    }
-
-    public void setBottomID(int bottomID) {
-        this.bottomID = bottomID;
+        return bottom.getID();
     }
 
     public String getBottomName() {
-        return bottomName;
-    }
-
-    public void setBottomName(String bottomName) {
-        this.bottomName = bottomName;
+        return bottom.getName();
     }
 
     public int getBottomPrice() {
-        return bottomPrice;
-    }
-
-    public void setBottomPrice(int bottomPrice) {
-        this.bottomPrice = bottomPrice;
+        return bottom.getPrice();
     }
 
     public int getQuantity() {

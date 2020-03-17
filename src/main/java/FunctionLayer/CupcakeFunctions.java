@@ -8,11 +8,10 @@ import Objects.Topping;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Kode {
+public class CupcakeFunctions {
     //Creating lists
     private static List<Bottom> bottomList;
     private static List<Topping> toppingList;
-    private static ArrayList<Topping> cupcakeList;
 
     //Inits
     public static void initBottoms(){
@@ -25,11 +24,6 @@ public class Kode {
             toppingList = UserMapper.getTopping();
         }
     }
-    public static void initCupcakes(){
-        if (cupcakeList == null){
-            cupcakeList = UserMapper.getCupcakes();
-        }
-    }
 
     //Get lists
     public static List<Bottom> getBottomsList() {
@@ -38,7 +32,7 @@ public class Kode {
     public static List<Topping> getToppingList() {
         return toppingList;
     }
-    public static ArrayList<Topping> getCupcakeList() {
-        return cupcakeList;
-    }
+
+
+    //
 }

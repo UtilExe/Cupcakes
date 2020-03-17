@@ -1,27 +1,25 @@
 package Objects;
 
 public class Bottom {
-    private int ID;
+    private int id;
     private String name;
     private int price;
 
-    public Bottom(int ID, String name, int price) {
-        this.ID = ID;
+    public Bottom(int id, String name, int price) {
+        this.id = id;
         this.name = name;
         this.price = price;
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;

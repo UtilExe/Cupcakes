@@ -1,6 +1,7 @@
 package PresentationLayer;
 
 import FunctionLayer.LoginSampleException;
+import Objects.Cupcake;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,9 +12,9 @@ public class Cart extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-       // ArrayList<Cupcake> cupcake = new ArrayList<Cupcake>();
-        //request.setAttribute("cupcake", cupcake);
+       ArrayList<Cupcake> cupcake = new ArrayList<Cupcake>();
+       cupcake.add(new Cupcake());
 
-        return "cart";
+       return "cart";
     }
 }
