@@ -88,23 +88,23 @@
 
 
                 <form action="FrontController" method="post">
-                <input type="hidden" name="target" value="buildCupcakes">
+                    <input type="hidden" name="target" value="buildCupcakes">
 
 
-                <select id="bund" name="bund">
+                    <select id="bund" name="bund">
 
-                    <option value="Vælg Bund">Vælg Bund</option>
-                   <c:forEach var="bottom" items="${bottoms}">
-                       <option name="bund"> ${bottom.name}, ${bottom.price} kr.</option>
-                    </c:forEach>
+                        <option value="Vælg Bund">Vælg Bund</option>
+                        <c:forEach var="bottom" items="${bottoms}">
+                            <option name="bund"> ${bottom.name}, ${bottom.price} kr.</option>
+                        </c:forEach>
 
-                </select>
+                    </select>
             </div>
             <div class="col-3">
                 <select id="topping" name="topping">
                     <option value="Vælg Topping">Vælg Topping</option>
                     <c:forEach var="topping" items="${toppings}">
-                        <option value="${topping.name}, ${topping.price}"> ${topping.name}, ${topping.price} kr.</option>
+                        <option name="top"> ${topping.name}, ${topping.price} kr.</option>
                     </c:forEach>
                 </select>
             </div>
@@ -117,7 +117,7 @@
 
                 <button class="btn btn-primary" type="submit">Læg i kurv</button>
 
-                <p>${sessionScope.besked}</p>
+                <p>${sessionScope.cupcake}</p>
 
             </div>
 
@@ -133,7 +133,7 @@
 
 <c:if test="${requestScope.error!= null}">
 
-<h2>Error ! </h2>
+    <h2>Error ! </h2>
     ${requestScope.error}
 
 </c:if>
