@@ -37,25 +37,27 @@ public class UserMapper {
         }
     }
 
-    /*
-    public static User login(String email, String password) throws LoginSampleException {
+
+    public static User login(String mail, String pw) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT id, role FROM Users "
+            String SQL = "SELECT email, password FROM users "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1, email);
-            ps.setString(2, password);
+            ps.setString(1, mail);
+            ps.setString(2, pw);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                String role = rs.getString("role");
-                int id = rs.getInt("id");
-                User user = new User(email, password, role);
-                user.setId(id);
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                User user = new User(email, password);
+
                 con.close();
                 ps.close();
                 rs.close();
+
                 return user;
+
             } else {
                 throw new LoginSampleException("Could not validate user");
             }
@@ -63,7 +65,7 @@ public class UserMapper {
             throw new LoginSampleException(ex.getMessage());
         }
     }
-*/
+
     public static void supportMessage(String email, String msg) {
         try {
             Connection con = Connector.connection();

@@ -65,16 +65,6 @@
 
     <img src="images/header.png" class="img-fluid" alt="Responsive header image"/>
 
-
-    <%--        Bare lige se I har en ide om hvad vi forslå I ikke gør ! det hedder scpript lets --%>
-    <%--        <% String error = (String) request.getAttribute( "error");--%>
-    <%--           if ( error != null) { --%>
-    <%--               out.println("<H2>Error!!</h2>");--%>
-    <%--               out.println(error);--%>
-    <%--           }--%>
-    <%--        %>--%>
-
-
     <div class="jumbotron mr-5 mt-20 mt-lg-0">
         <h1 class="display-4" style="text-align: center">Her kan du oprette en profil</h1>
         <div class="container register-form">

@@ -6,12 +6,6 @@ package FunctionLayer;
  */
 public class User {
 
-    public User(String username, String email, String password, int mobilNr ) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.mobilNr = mobilNr;
-    }
 
 
     private String username;
@@ -19,6 +13,18 @@ public class User {
     private String password; // Should be hashed and secured
     private int mobilNr;
     private int saldo;
+
+    public User(String username, String email, String password, int mobilNr ) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.mobilNr = mobilNr;
+    }
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 
     public String getUsername() {
         return username;

@@ -4,7 +4,7 @@ USE `cupcake`;
 CREATE TABLE `cupcake`.`users` (
   `username` VARCHAR(16) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
-  `password` VARCHAR(32) NOT NULL,
+  `password` VARCHAR(32),
   `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `mobil_nr` INT(8) NULL,
   `saldo` INT NOT NULL DEFAULT 500,
