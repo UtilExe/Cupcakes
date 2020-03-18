@@ -9,6 +9,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@include file="/include/header.inc" %>
 
+<title>Cupcakes</title>
+
 
 </head>
 <link rel="stylesheet" href="css/styles.css">
@@ -85,15 +87,15 @@
             <div class="col-3">
 
 
-                <form action="FrontController" method="get">
-                <input type="hidden" name="target" value="cart"/>
+                <form action="FrontController" method="post">
+                <input type="hidden" name="target" value="buildCupcakes">
 
 
                 <select id="bund" name="bund">
 
                     <option value="Vælg Bund">Vælg Bund</option>
                    <c:forEach var="bottom" items="${bottoms}">
-                       <option> ${bottom.name}, ${bottom.price} kr.</option>
+                       <option name="bund"> ${bottom.name}, ${bottom.price} kr.</option>
                     </c:forEach>
 
                 </select>
@@ -113,7 +115,9 @@
             </div>
             <div class="text-right">
 
-                <a class="btn btn-primary" type="submit" name="addToCart" href="#" role="button">Læg i kurv</a>
+                <button class="btn btn-primary" type="submit">Læg i kurv</button>
+
+                <p>${sessionScope.besked}</p>
 
             </div>
 
