@@ -138,17 +138,17 @@ public class UserMapper {
         }
     }
 
-    public static void createOrderLine(String email, int count, int quantity, int sum, int toppingID, int bottomID) {
+    public static void createOrderLine(String email, int quantity, int sum, int toppingID, int bottomID) {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT orderID FROM cupcake.orders WHERE email='"+email+"' ORDER BY date DESC;";
+            String SQL = "SELECT MAX(orderID) FROM cupcake.orders WHERE email='"+email+"';";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
             int orderID = 0;
             while (rs.next()) {
-                orderID = rs.getInt("orderID");
+                orderID = rs.getInt("MAX(orderID)");
             }
-            SQL = "INSERT INTO cupcake.orderlines (orderlinesID, orderID, quantity, sum, toppingID, bottomID) VALUES ("+count+", "+orderID+", "+quantity+", "+sum+", "+toppingID+", "+bottomID+");";
+            SQL = "INSERT INTO cupcake.orderlines (orderID, quantity, sum, toppingID, bottomID) VALUES ("+orderID+", "+quantity+", "+sum+", "+toppingID+", "+bottomID+");";
             ps = con.prepareStatement(SQL);
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {

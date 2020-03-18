@@ -35,7 +35,7 @@ CREATE TABLE `cupcake`.`bottom` (
   PRIMARY KEY (`idbottom`));
   
 CREATE TABLE `cupcake`.`orderlines` (
-  `orderlinesID` INT NOT NULL,
+  `orderlinesID` INT NOT NULL AUTO_INCREMENT,
   `orderID` INT NOT NULL,
   `quantity` INT NULL,
   `sum` INT NULL,

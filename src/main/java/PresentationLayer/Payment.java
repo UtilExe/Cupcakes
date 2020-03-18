@@ -20,20 +20,19 @@ public class Payment extends Command {
 
         UserMapper.createOrder(email);
 
-        int count = 0;
         for (Cupcake c: BuildCupcake.cart) {
-            count++;
             int quantity = c.getQuantity();
-            int sum = getTotal(BuildCupcake.cart);
+            int sum = (c.getBottomPrice()+c.getToppingPrice())*quantity;
             int toppingID = c.getToppingID();
             int bottomID = c.getBottomID();
-            UserMapper.createOrderLine(email, count, quantity, sum, toppingID, bottomID);
+            UserMapper.createOrderLine(email, quantity, sum, toppingID, bottomID);
         }
 
         UserMapper.adjustSaldo(email, getTotal(BuildCupcake.cart));
 
         request.setAttribute("besked", "Din ordre er oprettet og du kan nu hente den i butikken!");
-
+        BuildCupcake.cart.clear();
+        BuildCupcake.cart.size();
         return "cart";
     }
 
