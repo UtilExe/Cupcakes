@@ -27,19 +27,17 @@
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>
-                            Cupcakes</h3><span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>Cupcakes</h3><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                 <a class="nav-link" href="FrontController?target=redirect&destination=contact"><h3>
                                     Kontakt</h3></a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                         <div class="col-lg-5">
-                                            <a class="nav-link" href="FrontController?target=redirect&destination=cart">
-                                                <h3>Kurv</h3></a>
+                                            <a class="nav-link" href="FrontController?target=redirect&destination=cart"><h3>Kurv</h3></a>
                                         </div>
                                         </li>
                                     </ul>
@@ -74,7 +72,7 @@
             <div class="container">
                 <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
                     <c:forEach var="element" items="${sessionScope.kurv}">
-                    <li>${element}</li>
+                        <li>${element}</li>
                     </c:forEach>
                 </ul>
             </div>
@@ -86,7 +84,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="background-color: darkslategrey; color: white;">Samlet Pris: </span>
                         </div>
-                        <span class="input-group-text" style="background-color: white; padding-left: 20px;">${sessionScope.total} kr.</span>
+                        <span class="input-group-text"
+                              style="background-color: white; padding-left: 20px;">${sessionScope.total} kr.</span>
                         <input type="submit" class="btnSubmitKurv" value="Betal">
                     </div>
                 </div>

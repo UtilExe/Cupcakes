@@ -1,13 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="FunctionLayer.CupcakeFunctions" %>
-<%@include file="include/header.inc"%>
+<%@include file="include/header.inc" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-    <title>Welcome page</title>
+<title>Welcome page</title>
 
 </head>
 <body>
 
-<%!
+    <%!
     @Override
     public void jspInit(){
         CupcakeFunctions.initTopppings();
@@ -16,11 +16,10 @@
     }
 %>
 
-<%
+    <%
     request.setAttribute("toppings", CupcakeFunctions.getToppingList());
     request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());
 %>
-
 
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
@@ -35,20 +34,22 @@
                 <div class="col-lg-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#"><h3>Forside</h3> <span class="sr-only">(current)</span></a>
+                    </li>
                 </div>
-                </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                         <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>Cupcakes</h3></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                                <a class="nav-link" href="FrontController?target=redirect&destination=contact"><h3>Kontakt</h3></a>
+                                <a class="nav-link" href="FrontController?target=redirect&destination=contact"><h3>
+                                    Kontakt</h3></a>
                                 </li>
                                 <li class="nav-item">
                                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                         <div class="col-lg-5">
-                                            <a class="nav-link" href="FrontController?target=redirect&destination=cart"><h3>Kurv</h3></a>
+                                            <a class="nav-link" href="FrontController?target=redirect&destination=cart">
+                                                <h3>Kurv</h3></a>
                                         </div>
                                         </li>
                                     </ul>
@@ -58,7 +59,7 @@
         </ul>
 
         <span class="navbar-text mr-5">
-      Email-adresse
+      ${sessionScope.email}
     </span>
         <%@include file="/include/dropdownMenu.inc" %>
     </div>
@@ -103,4 +104,4 @@
     </c:if>
 </div>
 
-<%@include file="include/footer.inc"%>
+<%@include file="include/footer.inc" %>

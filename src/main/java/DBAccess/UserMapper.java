@@ -28,10 +28,6 @@ public class UserMapper {
             ps.setString(3, user.getPassword());
             ps.setInt(4, user.getMobilNr());
             ps.executeUpdate();
-            ResultSet rs = ps.executeQuery();
-            con.close();
-            ps.close();
-            rs.close();
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());
         }
@@ -51,10 +47,6 @@ public class UserMapper {
                 String email = rs.getString("email");
                 String password = rs.getString("password");
                 User user = new User(email, password);
-
-                con.close();
-                ps.close();
-                rs.close();
 
                 return user;
 

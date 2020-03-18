@@ -12,16 +12,16 @@
                         <li>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8"
-                                          id="login-nav">
+                                    <form class="form" role="form" method="post" action="FrontController" method="POST" accept-charset="UTF-8" id="login-nav">
+                                    <input type="hidden" name="target" value="login">
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputEmail2">E-mail adresse</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail2"
+                                            <input type="email" name="email" class="form-control" id="exampleInputEmail2"
                                                    placeholder="E-mail adresse" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="sr-only" for="exampleInputPassword2">Adgangskode</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword2"
+                                            <input type="password" name="password" class="form-control" id="exampleInputPassword2"
                                                    placeholder="Adgangskode" required>
                                         </div>
                                         <div class="form-group">
