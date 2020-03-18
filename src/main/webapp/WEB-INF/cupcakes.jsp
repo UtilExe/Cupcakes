@@ -101,7 +101,7 @@
                     </select>
             </div>
             <div class="col-3">
-                <select id="topping" name="topping">
+                <select id="top" name="top">
                     <option value="Vælg Topping">Vælg Topping</option>
                     <c:forEach var="topping" items="${toppings}">
                         <option name="top"> ${topping.name}, ${topping.price} kr.</option>
