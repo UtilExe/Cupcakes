@@ -83,9 +83,12 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col-3">
-                <select id="bund">
+
+                <form action="FrontController" method="get">
+                <input type="hidden" name="target" value="cart"/>
 
 
+                <select id="bund" name="bund">
                     <option value="Vælg Bund">Vælg Bund</option>
                    <c:forEach var="bottom" items="${bottoms}">
                        <option> ${bottom.name}, ${bottom.price} kr.</option>
@@ -97,7 +100,7 @@
                 </select>
             </div>
             <div class="col-3">
-                <select id="topping">
+                <select id="topping" name="topping">
                     <option value="Vælg Topping">Vælg Topping</option>
                     <c:forEach var="topping" items="${toppings}">
                         <option> ${topping.name}, ${topping.price} kr.</option>
@@ -122,6 +125,9 @@
                 <a class="btn btn-primary" type="submit" name="addToCart" href="#" role="button">Læg i kurv</a>
 
             </div>
+
+            </form>
+
         </div>
 
     </div>
