@@ -21,7 +21,7 @@ public class UserMapper {
     public static void createUser(User user) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO Users (username, email, password, /*create_time,*/ mobil_nr /*, saldo */) VALUES (?, ?, ?,/* ?, */ ? /*, ? */)";
+            String SQL = "INSERT INTO cupcake.users (username, email, password, /*create_time,*/ mobil_nr /*, saldo */) VALUES (?, ?, ?,/* ?, */ ? /*, ? */)";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
@@ -33,11 +33,10 @@ public class UserMapper {
         }
     }
 
-
     public static User login(String mail, String pw) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT email, password FROM users "
+            String SQL = "SELECT email, password FROM cupcake.users "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, mail);
@@ -97,7 +96,6 @@ public class UserMapper {
         return toppingList;
     }
 
-
     public static ArrayList<Bottom> getBottom() {
         ArrayList<Bottom> bottomList = new ArrayList<>();
         try {
@@ -125,6 +123,15 @@ public class UserMapper {
             ex.printStackTrace();
         }
         return bottomList;
+    }
+
+    public static void createOrder(String email) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "INSERT INTO cupcake.orders (email) VALUES ("+email+");";
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
     }
 
 }

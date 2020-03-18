@@ -11,7 +11,7 @@ CREATE TABLE `cupcake`.`users` (
   PRIMARY KEY (`email`));
 
 CREATE TABLE `cupcake`.`orders` (
-  `orderID` INT NOT NULL,
+  `orderID` INT NOT NULL AUTO_INCREMENT,
   `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `email` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`orderID`),

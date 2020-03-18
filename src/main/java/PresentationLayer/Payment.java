@@ -10,6 +10,7 @@ public class Payment extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         //TODO Træk samlet pris fra kundens saldo. Tilføj ordre til orderline og orders. Giv bekræftigelse/kvittering. Opret midlertidig bruger for saldo
 
-        return null;
+
+        return "payment";
     }
 }

@@ -27,7 +27,8 @@
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>Cupcakes</h3><span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="FrontController?target=redirect&destination=cupcakes"><h3>
+                            Cupcakes</h3><span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
@@ -37,7 +38,11 @@
                                 <li class="nav-item active">
                                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                         <div class="col-lg-5">
-                                            <a class="nav-link" href="FrontController?target=redirect&destination=cart"><h3>Kurv</h3></a>
+                                            <li class="nav-item active">
+                                                <a class="nav-link"
+                                                   href="FrontController?target=redirect&destination=cart"><h3>Kurv</h3>
+                                                </a>
+                                            </li>
                                         </div>
                                         </li>
                                     </ul>
@@ -47,7 +52,7 @@
         </ul>
 
         <span class="navbar-text mr-5">
-      Email-adresse
+      ${sessionScope.email}
     </span>
         <%@include file="../include/dropdownMenu.inc" %>
     </div>

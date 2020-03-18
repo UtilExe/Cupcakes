@@ -26,11 +26,9 @@
         <ul class="navbar-nav mr-auto">
             <ul class="navbar-nav mr-5 mt-60 mt-lg-0">
                 <div class="col-lg-auto">
-
                     <a class="nav-link" href="FrontController?target=redirect&destination=index"><h3>Forside</h3> <span
                             class="sr-only">(current)</span></a>
                 </div>
-
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                         <li class="nav-item active">
@@ -56,7 +54,7 @@
         </ul>
 
         <span class="navbar-text mr-5">
-      Email-adresse
+      ${sessionScope.email}
     </span>
         <%@include file="../include/dropdownMenu.inc" %>
     </div>
