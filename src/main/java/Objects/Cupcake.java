@@ -49,10 +49,8 @@ public class Cupcake {
 
     @Override
     public String toString() {
-        return "Cupcake{" +
-                "bottom=" + bottom +
-                ", topping=" + topping +
-                ", quantity=" + quantity +
-                '}';
+        int price = getToppingPrice() + getBottomPrice();
+        return "Cupcake - " + "Bund: " + getBottomName() + ", Topping: " + getToppingName()
+                + ", Stk.: " + getQuantity() + ", Pris pr. stk.: " + price + " kr.";
     }
 }

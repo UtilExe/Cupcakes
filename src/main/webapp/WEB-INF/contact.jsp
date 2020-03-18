@@ -54,13 +54,13 @@
     <div class="row mt-4">
         <div class="col-3"></div>
         <div class="form-group col-6">
-            <label for="email">Email address</label>
+            <label for="email">Email adresse</label>
             <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
         </div>
         <div class="col-3"></div>
         <div class="col-3"></div>
         <div class="form-group col-6">
-            <label for="textArea">Example textarea</label>
+            <label for="textArea">Skriv til os nedenfor:</label>
             <textarea name="message" class="form-control" id="textArea" rows="8"></textarea>
         </div>
         <div class="col-3"></div>
