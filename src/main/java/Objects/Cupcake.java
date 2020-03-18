@@ -5,13 +5,13 @@ import PresentationLayer.Redirect;
 
 public class Cupcake {
 
-    private Topping topping;
     private Bottom bottom;
+    private Topping topping;
     private int quantity;
 
-    public Cupcake(Topping topping, Bottom bottom, int quantity) {
-        this.topping = topping;
+    public Cupcake(Bottom bottom, Topping topping, int quantity) {
         this.bottom = bottom;
+        this.topping = topping;
         this.quantity = quantity;
     }
 
@@ -50,8 +50,8 @@ public class Cupcake {
     @Override
     public String toString() {
         return "Cupcake{" +
-                "topping=" + topping +
-                ", bottom=" + bottom +
+                "bottom=" + bottom +
+                ", topping=" + topping +
                 ", quantity=" + quantity +
                 '}';
     }

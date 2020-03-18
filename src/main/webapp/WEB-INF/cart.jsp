@@ -73,8 +73,8 @@
         <div class="container" style="border: 1px solid #A3A3A3;">
             <div class="container">
                 <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
-                    <c:forEach var="topping" items="${toppings}">
-                    <li>Topping: ${topping}, Bund: ${bottom}, Kvantitet: ${quantity}, Pris: ${price}</li>
+                    <c:forEach var="element" items="${sessionScope.kurv}">
+                    <li>${element}</li>
                     </c:forEach>
                 </ul>
             </div>
@@ -84,9 +84,9 @@
                 <div class="col-xl-4 col-lg-5 col-md-8 col-sm-10">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: darkslategrey; color: white;">Samlet Pris:</span>
+                            <span class="input-group-text" style="background-color: darkslategrey; color: white;">Samlet Pris: </span>
                         </div>
-                        <span class="input-group-text" style="background-color: white; padding-left: 20px;">${requestScope.total} kr.</span>
+                        <span class="input-group-text" style="background-color: white; padding-left: 20px;">${sessionScope.total} kr.</span>
                         <input type="submit" class="btnSubmitKurv" value="Betal">
                     </div>
                 </div>

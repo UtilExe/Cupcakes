@@ -117,9 +117,9 @@
 
                 <button class="btn btn-primary" type="submit">Læg i kurv</button>
 
-                <p>${sessionScope.cupcake}</p>
 
             </div>
+                <p>${sessionScope.besked}</p>
 
             </form>
 

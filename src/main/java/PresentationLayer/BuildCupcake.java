@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class BuildCupcake extends Command {
 
-    private static ArrayList<Cupcake> cart = new ArrayList<>();
+    public static ArrayList<Cupcake> cart = new ArrayList<>();
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
@@ -25,18 +25,15 @@ public class BuildCupcake extends Command {
         ArrayList<Topping> toppings = UserMapper.getTopping();
 
         HttpSession session = request.getSession();
-        int antal = Integer.parseInt(request.getParameter("antal"));
 
+        int antal = Integer.parseInt(request.getParameter("antal"));
         String bottom = request.getParameter("bund");
         String topping = request.getParameter("top");
 
-        Topping temp1 = getTopping(toppings, topping);
-        Bottom  temp2 = getBottom(bottoms, bottom);
-
-        Cupcake temp = new Cupcake(temp1, temp2, antal);
+        Cupcake temp = new Cupcake(getBottom(bottoms, bottom), getTopping(toppings, topping), antal);
         cart.add(temp);
 
-        session.setAttribute("cupcake", temp);
+        session.setAttribute("besked", "Din cupcake er tilføjet til kurven.");
 
         request.setAttribute("toppings", CupcakeFunctions.getToppingList());
         request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());
@@ -61,7 +58,6 @@ public class BuildCupcake extends Command {
             System.out.println(b.getName());
             if(bottom.contains(b.getName())) {
                 Bottom bot = new Bottom(b.getID(),b.getName(),b.getPrice());
-                System.out.println("Du ramte");
                 return bot;
             }
         }
