@@ -35,13 +35,13 @@ CREATE TABLE `cupcake`.`bottom` (
   PRIMARY KEY (`idbottom`));
   
 CREATE TABLE `cupcake`.`orderlines` (
-  `detailsID` INT NOT NULL,
+  `orderlinesID` INT NOT NULL,
   `orderID` INT NOT NULL,
   `quantity` INT NULL,
   `sum` INT NULL,
   `toppingID` INT NOT NULL,
   `bottomID` INT NOT NULL,
-  PRIMARY KEY (`detailsID`),
+  PRIMARY KEY (`orderlinesID`),
   INDEX `fk_orderlines_orderID_idx` (`orderID` ASC) VISIBLE,
   INDEX `fk_orderlines_toppingID_idx` (`toppingID` ASC) VISIBLE,
   INDEX `fk_orderlines_bottomID_idx` (`bottomID` ASC) VISIBLE,

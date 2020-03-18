@@ -5,6 +5,7 @@ import FunctionLayer.LoginSampleException;
 import Objects.Topping;
 import FunctionLayer.User;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -128,7 +129,39 @@ public class UserMapper {
     public static void createOrder(String email) {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO cupcake.orders (email) VALUES ("+email+");";
+            String SQL = "INSERT INTO cupcake.orders (email) VALUES ('"+email+"');";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+            System.out.println(email);
+        }
+    }
+
+    public static void createOrderLine(String email, int count, int quantity, int sum, int toppingID, int bottomID) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT orderID FROM cupcake.orders WHERE email='"+email+"' ORDER BY date DESC;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            int orderID = 0;
+            while (rs.next()) {
+                orderID = rs.getInt("orderID");
+            }
+            SQL = "INSERT INTO cupcake.orderlines (orderlinesID, orderID, quantity, sum, toppingID, bottomID) VALUES ("+count+", "+orderID+", "+quantity+", "+sum+", "+toppingID+", "+bottomID+");";
+            ps = con.prepareStatement(SQL);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void adjustSaldo(String email, int amount) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE users SET saldo=saldo-"+amount+" WHERE email='"+email+"';";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }

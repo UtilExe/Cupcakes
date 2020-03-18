@@ -91,7 +91,11 @@
                         </div>
                         <span class="input-group-text"
                               style="background-color: white; padding-left: 20px;">${sessionScope.total} kr.</span>
+                        <form action="FrontController" method="POST">
+                            <input type="hidden" name="target" value="pay">
                         <input type="submit" class="btnSubmitKurv" value="Betal">
+                        </form>
+                        ${requestScope.besked}
                     </div>
                 </div>
             </div>
