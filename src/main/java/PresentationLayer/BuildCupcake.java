@@ -30,7 +30,10 @@ public class BuildCupcake extends Command {
         String bottom = request.getParameter("bund");
         String topping = request.getParameter("top");
 
-        Cupcake temp = new Cupcake(getTopping(toppings, topping), getBottom(bottoms, bottom), antal);
+        Topping temp1 = getTopping(toppings, topping);
+        Bottom  temp2 = getBottom(bottoms, bottom);
+
+        Cupcake temp = new Cupcake(temp1, temp2, antal);
         cart.add(temp);
 
         session.setAttribute("cupcake", temp);

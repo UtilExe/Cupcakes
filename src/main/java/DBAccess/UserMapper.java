@@ -90,9 +90,13 @@ public class UserMapper {
                 toppingList.add(new Topping(ID, name, price));
             }
 
-            /*con.close();
+            /*
+            RETURNERER NULL HVIS VI CLOSER. HVORFOR?
+            con.close();
             ps.close();
-            rs.close();*/
+            rs.close();
+            */
+
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
         }
@@ -115,9 +119,13 @@ public class UserMapper {
                 bottomList.add(new Bottom(ID, name, price));
             }
 
+            /*
+            RETURNERER NULL HVIS VI CLOSER. HVORFOR?
             con.close();
             ps.close();
             rs.close();
+            */
+
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
             ex.printStackTrace();
