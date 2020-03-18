@@ -84,18 +84,18 @@
             <div class="col-1"></div>
             <div class="col-3">
 
+<<<<<<< HEAD
                 <form action="FrontController" method="get">
                 <input type="hidden" name="target" value="cart"/>
 
 
                 <select id="bund" name="bund">
+=======
+>>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667
                     <option value="Vælg Bund">Vælg Bund</option>
                    <c:forEach var="bottom" items="${bottoms}">
                        <option> ${bottom.name}, ${bottom.price} kr.</option>
-
                     </c:forEach>
-
-
 
                 </select>
             </div>
@@ -103,8 +103,7 @@
                 <select id="topping" name="topping">
                     <option value="Vælg Topping">Vælg Topping</option>
                     <c:forEach var="topping" items="${toppings}">
-                        <option> ${topping.name}, ${topping.price} kr.</option>
-
+                        <option value="${topping.name}, ${topping.price}"> ${topping.name}, ${topping.price} kr.</option>
                     </c:forEach>
                 </select>
             </div>
@@ -117,8 +116,13 @@
                     <option value="3">12</option>
                     <option value="4">15</option>
                 </select>
+<<<<<<< HEAD
                 -->
                 <input name="antal" type="text" id="antal" placeholder="Skriv antal...">
+=======
+
+
+>>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667
             </div>
             <div class="text-right">
 

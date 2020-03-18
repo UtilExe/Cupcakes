@@ -2,7 +2,6 @@ package FunctionLayer;
 
 import DBAccess.UserMapper;
 import Objects.Bottom;
-import Objects.Cupcake;
 import Objects.Topping;
 
 import java.util.ArrayList;
@@ -32,7 +31,10 @@ public class CupcakeFunctions {
     public static List<Topping> getToppingList() {
         return toppingList;
     }
+<<<<<<< HEAD:src/main/java/FunctionLayer/CupcakeFunctions.java
 
 
     //
+=======
+>>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667:src/main/java/FunctionLayer/Kode.java
 }
