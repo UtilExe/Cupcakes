@@ -84,14 +84,13 @@
             <div class="col-1"></div>
             <div class="col-3">
 
-<<<<<<< HEAD
+
                 <form action="FrontController" method="get">
                 <input type="hidden" name="target" value="cart"/>
 
 
                 <select id="bund" name="bund">
-=======
->>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667
+
                     <option value="Vælg Bund">Vælg Bund</option>
                    <c:forEach var="bottom" items="${bottoms}">
                        <option> ${bottom.name}, ${bottom.price} kr.</option>
@@ -108,21 +107,9 @@
                 </select>
             </div>
             <div class="col-3">
-                <!--
-                <select id="antal">
-                    <option value="Vælg Antal">Vælg Antal</option>
-                    <option value="1">5</option>
-                    <option value="2">7</option>
-                    <option value="3">12</option>
-                    <option value="4">15</option>
-                </select>
-<<<<<<< HEAD
-                -->
+
                 <input name="antal" type="text" id="antal" placeholder="Skriv antal...">
-=======
 
-
->>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667
             </div>
             <div class="text-right">
 

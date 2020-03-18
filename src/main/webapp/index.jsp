@@ -1,10 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<<<<<<< HEAD
 <%@ page import="FunctionLayer.CupcakeFunctions" %>
-=======
-<%@ page import="FunctionLayer.Kode" %>
-
->>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667
 <%@include file="include/header.inc"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <title>Welcome page</title>
@@ -15,25 +10,15 @@
 <%!
     @Override
     public void jspInit(){
-<<<<<<< HEAD
         CupcakeFunctions.initTopppings();
         CupcakeFunctions.initBottoms();
-=======
-        Kode.initTopppings();
-        Kode.initBottoms();
 
->>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667
     }
 %>
 
 <%
-<<<<<<< HEAD
     request.setAttribute("toppings", CupcakeFunctions.getToppingList());
     request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());
-=======
-    request.setAttribute("toppings",Kode.getToppingList());
-    request.setAttribute("bottoms", Kode.getBottomsList());
->>>>>>> 1280fe65eb9d8ccb8c5d4e2b73cc2d09ee78b667
 %>
 
 
