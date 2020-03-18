@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="FunctionLayer.CupcakeFunctions" %>
 <%@include file="include/header.inc" %>
+<link rel="stylesheet" href="css/styles.css">
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <title>Welcome page</title>
 
