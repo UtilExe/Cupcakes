@@ -51,7 +51,7 @@ public class UserMapper {
                 return user;
 
             } else {
-                throw new LoginSampleException("Could not validate user");
+                throw new LoginSampleException("Forkert login, prøv igen.");
             }
         } catch (ClassNotFoundException | SQLException ex) {
             throw new LoginSampleException(ex.getMessage());

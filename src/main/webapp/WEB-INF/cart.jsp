@@ -52,8 +52,8 @@
         </ul>
 
         <span class="navbar-text mr-5">
-      ${sessionScope.email}
-    </span>
+            ${sessionScope.email}
+        </span>
         <%@include file="../include/dropdownMenu.inc" %>
     </div>
 </nav>
@@ -83,21 +83,27 @@
             </div>
 
             <div class="row">
-                <div class="col-xl-8 col-lg-7 col-md-4 col-sm-2"></div>
-                <div class="col-xl-4 col-lg-5 col-md-8 col-sm-10">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" style="background-color: darkslategrey; color: white;">Samlet Pris: </span>
-                        </div>
-                        <span class="input-group-text"
-                              style="background-color: white; padding-left: 20px;">${sessionScope.total} kr.</span>
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
                         <form action="FrontController" method="POST">
-                            <input type="hidden" name="target" value="pay">
-                        <input type="submit" class="btnSubmitKurv" value="Betal">
+                            <input type="hidden" name="target" value="fjernordre">
+                            <input type="submit" class="btn btn-danger" value="Fjern ordre">
                         </form>
-                        ${requestScope.besked}
-                    </div>
                 </div>
+                    <div class="col-xl-6 col-lg-5 col-md-2 col-sm-0"></div>
+                    <div class="col-xl-4 col-lg-5 col-md-8 col-sm-10">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="background-color: darkslategrey; color: white;">Samlet Pris: </span>
+                            </div>
+                            <span class="input-group-text"
+                                  style="background-color: white; padding-left: 20px;">${sessionScope.total} kr.</span>
+                            <form action="FrontController" method="POST">
+                                <input type="hidden" name="target" value="pay">
+                                <input type="submit" class="btnSubmitKurv" value="Betal">
+                            </form>
+                            ${sessionScope.successBetal}
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

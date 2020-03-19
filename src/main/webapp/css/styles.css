@@ -105,3 +105,12 @@
 .fejlbesked {
     margin-bottom: 30px;
 }
+
+.btnSubmitKurvOrdre
+{
+    border:none;
+    border-radius:1.5rem;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}

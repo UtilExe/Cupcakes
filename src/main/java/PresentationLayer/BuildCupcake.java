@@ -37,6 +37,7 @@ public class BuildCupcake extends Command {
 
         request.setAttribute("toppings", CupcakeFunctions.getToppingList());
         request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());
+        session.setAttribute("cart", cart);
 
         return "cupcakes";
     }

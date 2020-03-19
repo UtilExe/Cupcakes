@@ -67,7 +67,7 @@
 </nav>
 
     <c:if test="${requestScope.error!= null}">
-    <div class="fejlbesked">
+    <div class="fejlbesked" style="margin-bottom: 10px; text-align: center;">
         <h2>Fejl!</h2>
         ${requestScope.error}
     </div>
