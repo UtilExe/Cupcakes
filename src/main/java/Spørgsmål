@@ -1,6 +1,0 @@
-Hvilken metode er bedst custom:
-1. Skrive SQL statement i en query og tage variabler med fra java
-2. Bruge prepared statement sammen med "?"
-
-
-Hvordan kan vi med en dropdown menu store data valgt vha. en knap til databasen?

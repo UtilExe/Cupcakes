@@ -14,8 +14,7 @@ public class Register extends Command {
         String username = request.getParameter( "username" );
         String email = request.getParameter( "email" );
         String password = request.getParameter( "password" );
-        int mobilNr;
-            mobilNr = Integer.parseInt(request.getParameter("mobilNr").trim());
+        int mobilNr = Integer.parseInt((request.getParameter("mobilNr")).replace(" ", ""));
 
         try {
             User user = LogicFacade.createUser(username, email, password, mobilNr);
