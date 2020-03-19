@@ -66,6 +66,13 @@
     </div>
 </nav>
 
+    <c:if test="${requestScope.error!= null}">
+    <div class="fejlbesked">
+        <h2>Fejl!</h2>
+        ${requestScope.error}
+    </div>
+    </c:if>
+
 <div class="container jumbotron ">
 
     <img src="images/header.png" class="img-fluid" alt="Responsive header image"/>
@@ -97,12 +104,7 @@
 
     </div>
 
-    <c:if test="${requestScope.error!= null}">
 
-        <h2>Error ! </h2>
-        ${requestScope.error}
-
-    </c:if>
 </div>
 
 <%@include file="include/footer.inc" %>
