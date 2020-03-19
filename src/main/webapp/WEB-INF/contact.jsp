@@ -62,7 +62,7 @@
         <div class="col-3"></div>
         <div class="form-group col-6">
             <label for="textArea">Skriv til os nedenfor:</label>
-            <textarea name="message" class="form-control" id="textArea" rows="8"></textarea>
+            <textarea name="message" class="form-control" placeholder="Beskeden må maks være på 255 tegn..." id="textArea" rows="8"></textarea>
         </div>
         <div class="col-3"></div>
     </div>

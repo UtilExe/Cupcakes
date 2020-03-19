@@ -63,7 +63,7 @@ CREATE TABLE `cupcake`.`orderlines` (
 
 CREATE TABLE `cupcake`.`support` (
   `idsupport` INT NOT NULL AUTO_INCREMENT,
-  `message` VARCHAR(45) NOT NULL,
+  `message` VARCHAR(255) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idsupport`));
   
