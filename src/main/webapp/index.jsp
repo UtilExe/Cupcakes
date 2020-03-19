@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="FunctionLayer.CupcakeFunctions" %>
+<%@ page import="FunctionLayer.Initialisation" %>
 <%@include file="include/header.inc" %>
 <link rel="stylesheet" href="css/styles.css">
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
@@ -11,15 +11,17 @@
     <%!
     @Override
     public void jspInit(){
-        CupcakeFunctions.initTopppings();
-        CupcakeFunctions.initBottoms();
+        Initialisation.initTopppings();
+        Initialisation.initBottoms();
+        Initialisation.initEmails();
 
     }
 %>
 
     <%
-    request.setAttribute("toppings", CupcakeFunctions.getToppingList());
-    request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());
+    request.setAttribute("toppings", Initialisation.getToppingList());
+    request.setAttribute("bottoms", Initialisation.getBottomsList());
+    request.setAttribute("custs", Initialisation.getUserEmailList());
 %>
 
 

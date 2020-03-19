@@ -54,7 +54,7 @@
 
         <span class="navbar-text mr-5">
 
-      Email-adresse
+      ${sessionScope.email}
     </span>
 
         <%@include file="../include/dropdownMenu.inc" %>

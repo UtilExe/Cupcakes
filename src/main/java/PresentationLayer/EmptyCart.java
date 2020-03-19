@@ -14,8 +14,7 @@ public class EmptyCart extends Command {
 
         HttpSession session = request.getSession();
         ArrayList<Cupcake> cart = (ArrayList<Cupcake>) session.getAttribute("cart");
-
-        BuildCupcake.cart.clear();
+        cart.clear();
 
         session.setAttribute("total", 0);
 

@@ -7,10 +7,11 @@ import Objects.Topping;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CupcakeFunctions {
+public class Initialisation {
     //Creating lists
     private static List<Bottom> bottomList;
     private static List<Topping> toppingList;
+    private static List<String> userEmailList;
 
     //Inits
     public static void initBottoms(){
@@ -23,6 +24,11 @@ public class CupcakeFunctions {
             toppingList = UserMapper.getTopping();
         }
     }
+    public static void initEmails() {
+        if (userEmailList == null) {
+            userEmailList = UserMapper.getUsersEmails();
+        }
+    }
 
     //Get lists
     public static List<Bottom> getBottomsList() {
@@ -31,5 +37,6 @@ public class CupcakeFunctions {
     public static List<Topping> getToppingList() {
         return toppingList;
     }
+    public static List<String> getUserEmailList() { return userEmailList; }
 
 }

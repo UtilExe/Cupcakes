@@ -1,14 +1,13 @@
 package PresentationLayer;
 
-import FunctionLayer.CupcakeFunctions;
+import DBAccess.UserMapper;
+import FunctionLayer.Initialisation;
 import FunctionLayer.LoginSampleException;
 import Objects.Cupcake;
-import Objects.Topping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 
 public class Redirect extends Command {
     @Override
@@ -19,8 +18,12 @@ public class Redirect extends Command {
         HttpSession session = request.getSession();
 
         if(destination.equals("cupcakes")) {
-            request.setAttribute("toppings", CupcakeFunctions.getToppingList());
-            request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());
+            request.setAttribute("toppings", Initialisation.getToppingList());
+            request.setAttribute("bottoms", Initialisation.getBottomsList());
+        }
+
+        if(destination.equals("admin")) {
+            request.setAttribute("custs", Initialisation.getUserEmailList());
         }
 
         if(destination.equals("cart")) {

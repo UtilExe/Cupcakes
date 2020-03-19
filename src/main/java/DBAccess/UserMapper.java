@@ -22,7 +22,7 @@ public class UserMapper {
     public static void createUser(User user) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO cupcake.users (username, email, password, /*create_time,*/ mobil_nr /*, saldo */) VALUES (?, ?, ?,/* ?, */ ? /*, ? */)";
+            String SQL = "INSERT INTO cupcake.users (username, email, password, mobil_nr) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
@@ -83,14 +83,6 @@ public class UserMapper {
 
                 toppingList.add(new Topping(ID, name, price));
             }
-
-            /*
-            RETURNERER NULL HVIS VI CLOSER. HVORFOR?
-            con.close();
-            ps.close();
-            rs.close();
-            */
-
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
         }
@@ -165,6 +157,23 @@ public class UserMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static ArrayList<String> getUsersEmails() {
+        ArrayList<String> temp = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM cupcake.users;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String email = rs.getString("email");
+                temp.add(email);
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Kan ikke kommunikere korrekt med databasen.");
+        }
+        return temp;
     }
 
 }
