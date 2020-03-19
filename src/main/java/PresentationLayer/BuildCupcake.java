@@ -33,7 +33,7 @@ public class BuildCupcake extends Command {
         Cupcake temp = new Cupcake(getBottom(bottoms, bottom), getTopping(toppings, topping), antal);
         cart.add(temp);
 
-        session.setAttribute("besked", "Din cupcake er tilføjet til kurven.");
+        request.setAttribute("beskedTilføjet", "Din cupcake er tilføjet til kurven.");
 
         request.setAttribute("toppings", CupcakeFunctions.getToppingList());
         request.setAttribute("bottoms", CupcakeFunctions.getBottomsList());

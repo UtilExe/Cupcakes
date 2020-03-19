@@ -101,7 +101,7 @@
                                 <input type="hidden" name="target" value="pay">
                                 <input type="submit" class="btnSubmitKurv" value="Betal">
                             </form>
-                            ${sessionScope.successBetal}
+                            ${requestScope.beskedSuccessBetal}
                         </div>
                     </div>
             </div>

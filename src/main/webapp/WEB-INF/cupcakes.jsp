@@ -117,7 +117,7 @@
 
 
             </div>
-                <p>${sessionScope.besked}</p>
+                <p>${requestScope.beskedTilføjet}</p>
 
             </form>
 
