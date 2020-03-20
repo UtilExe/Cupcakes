@@ -13,15 +13,12 @@
     public void jspInit(){
         Initialisation.initTopppings();
         Initialisation.initBottoms();
-        Initialisation.initEmails();
-
     }
 %>
 
     <%
     request.setAttribute("toppings", Initialisation.getToppingList());
     request.setAttribute("bottoms", Initialisation.getBottomsList());
-    request.setAttribute("custs", Initialisation.getUserEmailList());
 %>
 
 

@@ -1,3 +1,4 @@
+<%@ page import="FunctionLayer.Initialisation" %>
 <%@include file="../include/header.inc" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
@@ -7,6 +8,19 @@
 <title>Admin Side</title>
 </head>
 <body>
+
+    <%!
+        @Override
+        public void jspInit(){
+        Initialisation.initEmails();
+        }
+
+    %>
+
+    <%
+
+        request.setAttribute("custs", Initialisation.getUserEmailList());
+    %>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
     <a class="navbar-brand" href="#"> <img src="./images/logo.png" width="100" height="60" alt="Logo"></a>
@@ -59,11 +73,11 @@
             <form action="FrontController" method="POST">
                 <input type="hidden" name="target" value="addBalance">
 
-                <select name="cust">
+                <select id="email" name="email">
 
                     <option value="Vælg kunde">Vælg kunde</option>
                     <c:forEach var="email" items="${custs}">
-                        <option name="email">${}</option>
+                        <option name="email">${email}</option>
                     </c:forEach>
 
                 </select>
