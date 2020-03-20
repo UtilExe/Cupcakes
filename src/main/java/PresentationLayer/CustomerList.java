@@ -4,6 +4,7 @@ import DBAccess.UserMapper;
 import FunctionLayer.Initialisation;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.User;
+import Objects.Order;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,15 +22,11 @@ public class CustomerList extends Command  {
         ArrayList<User> customerList = UserMapper.getUserInfo(email);
         HttpSession session = request.getSession();
 
-        HashMap<Integer, Date> custOrderList = UserMapper.getCustOrders(email);
-
-        for(Map.Entry<Integer, Date> entry : custOrderList.entrySet()) {
-            Integer ID = entry.getKey();
-            Date date = entry.getValue();
-        }
+        ArrayList<Order> custOrderList = UserMapper.getCustOrders(email);
 
         request.setAttribute("email", email);
         request.setAttribute("custOrders",custOrderList);
+        request.setAttribute("beskedCustList", "Tidligere order:");
         session.setAttribute("customerList", customerList);
         return "customerList";
     }

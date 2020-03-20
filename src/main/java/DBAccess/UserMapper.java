@@ -2,6 +2,7 @@ package DBAccess;
 
 import Objects.Bottom;
 import FunctionLayer.LoginSampleException;
+import Objects.Order;
 import Objects.Topping;
 import FunctionLayer.User;
 
@@ -212,8 +213,8 @@ public class UserMapper {
         return customerList;
     }
 
-    public static HashMap<Integer, Date> getCustOrders(String email) {
-        HashMap<Integer, Date> custOrderList = new HashMap<>();
+    public static ArrayList<Order> getCustOrders(String email) {
+        ArrayList<Order> custOrderList = new ArrayList<>();
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT orderID, date FROM cupcake.orders WHERE email='" + email + "';";
@@ -222,7 +223,7 @@ public class UserMapper {
             while (rs.next()) {
                 int orderID = rs.getInt("orderID");
                 Date date = rs.getDate( "date");
-                custOrderList.put(orderID, date);
+                custOrderList.add(new Order(orderID, date));
             }
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");

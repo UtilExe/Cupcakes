@@ -59,27 +59,29 @@
             <form action="FrontController" method="POST">
                 <input type="hidden" name="target" value="customerList">
 
-                <option value="Vælg kunde">Angiv kunde</option>
-                <div class="form-group"> E-mail adresse
-                    <input type="text" class="form-control" name="email" placeholder="Indtast kundens email *"/>
+
+                <div class="form-group">
+                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="email" placeholder="Indtast kundens email *"/>
                 </div>
 
-                <div class="container" style="border: 1px solid #A3A3A3;">
+                <input class="btn btn-primary mb-3" type="submit" value="Søg">
+
+                <div class="container" style="border: 1px solid #A3A3A3; border-radius: 5px;">
                     <div class="container">
                         <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
 
-                            <c:forEach var="email" items="${sessionScope.customerList}">
-                                ${email}
-                            <br>
 
-                                <p>Tidligere ordrer:</p>
-                                <c:forEach var="order" items="${custOrders}">
-                                    ${custOrders}
-                                    <br>
-                                </c:forEach>
+                            <c:forEach var="email" items="${sessionScope.customerList}">
+                                <p class="lead mb-0 mt-4">${email}.</p>
                             </c:forEach>
 
-                            <input type="submit" value="Submit">
+                                <div class="mt-4">
+                                    <p class="lead mb-0">${beskedCustList}</p>
+                                </div>
+
+                            <c:forEach var="order" items="${custOrders}">
+                                <p class="lead mb-1 mt-0">${order}</p>
+                            </c:forEach>
             </form>
             </ul>
         </div>
