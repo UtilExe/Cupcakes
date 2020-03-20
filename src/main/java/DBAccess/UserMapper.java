@@ -187,4 +187,33 @@ public class UserMapper {
         }
     }
 
+    public static ArrayList<Integer> getOrders() {
+        ArrayList<Integer> orderList = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM cupcake.orders;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int orderID = rs.getInt("orderID");
+                orderList.add(orderID);
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Kan ikke kommunikere korrekt med databasen.");
+        }
+
+        return orderList;
+    }
+
+    public static void removeOrder(String email, int orderID) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM cupcake.orders WHERE orderID="+orderID+" AND email='"+email+"';";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

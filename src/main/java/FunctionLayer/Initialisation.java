@@ -4,6 +4,7 @@ import DBAccess.UserMapper;
 import Objects.Bottom;
 import Objects.Topping;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Initialisation {
     private static List<Bottom> bottomList;
     private static List<Topping> toppingList;
     private static List<String> userEmailList;
+    private static List<Integer> orderList;
 
     //Inits
     public static void initBottoms(){
@@ -30,13 +32,19 @@ public class Initialisation {
         }
     }
 
+    public static void initOrders() {
+        if(orderList == null) {
+            orderList = UserMapper.getOrders();
+        }
+    }
+
     //Get lists
-    public static List<Bottom> getBottomsList() {
-        return bottomList;
-    }
-    public static List<Topping> getToppingList() {
-        return toppingList;
-    }
+    public static List<Bottom> getBottomsList() { return bottomList; }
+
+    public static List<Topping> getToppingList() { return toppingList; }
+
     public static List<String> getUserEmailList() { return userEmailList; }
+
+    public static List<Integer> getOrderList() { return orderList; }
 
 }
