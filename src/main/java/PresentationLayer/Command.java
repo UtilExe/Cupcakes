@@ -12,15 +12,16 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put( "login", new Login() );
-        commands.put( "register", new Register() );
-        commands.put("redirect", new Redirect());
-        commands.put("contact", new Contact());
-        commands.put("buildCupcakes", new BuildCupcake());
-        commands.put("pay", new Payment());
-        commands.put( "fjernordre", new EmptyCart());
-        commands.put("addBalance", new AddBalance());
-        commands.put("customerList", new CustomerList());
+        commands.put( "login"        , new Login() );
+        commands.put( "register"     , new Register() );
+        commands.put( "redirect"     , new Redirect());
+        commands.put( "contact"      , new Contact());
+        commands.put( "buildCupcakes", new BuildCupcake());
+        commands.put( "pay"          , new Payment());
+        commands.put( "fjernordre"   , new EmptyCart());
+        commands.put( "addBalance"   , new AddBalance());
+        commands.put( "customerList" , new CustomerList());
+        commands.put( "orderList"    , new OrderList());
     }
 
     static Command from( HttpServletRequest request ) {

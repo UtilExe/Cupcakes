@@ -46,7 +46,7 @@
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="FrontController?target=redirect&destination=orderlist">
+                                    <a class="nav-link" href="FrontController?target=redirect&destination=orderList">
                                         <h3>Ordreliste</h3></a>
                                 </li>
                             </ul>

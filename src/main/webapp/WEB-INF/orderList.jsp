@@ -5,22 +5,9 @@
 
 <link rel="stylesheet" href="css/styles.css">
 
-<title>Kundeliste Side</title>
+<title>Ordreliste Side</title>
 </head>
 <body>
-
-    <%!
-        @Override
-        public void jspInit(){
-        Initialisation.initEmails();
-        }
-
-    %>
-
-    <%
-
-        request.setAttribute("custs", Initialisation.getUserEmailList());
-    %>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
     <a class="navbar-brand" href="#"> <img src="./images/logo.png" width="100" height="60" alt="Logo"></a>
@@ -40,13 +27,13 @@
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="FrontController?target=redirect&destination=customerList"><h3>
                                 Kundeliste</h3></a>
                         </li>
                         <li class="nav-item">
                             <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="FrontController?target=redirect&destination=orderList">
                                         <h3>Ordreliste</h3></a>
                                 </li>
@@ -64,7 +51,7 @@
 </nav>
 
 <div class="container jumbotron" style="text-align: center;">
-    <h2 style="margin-bottom: 15px;">Vælg kunden du vil se info om </h2>
+    <h2 style="margin-bottom: 15px;">Vælg ordren du vil se info om </h2>
 
     <div class="col-12">
         <div class="col-md-auto">
@@ -72,9 +59,9 @@
                 <input type="hidden" name="target" value="customerList">
 
                 <select id="email" name="email" style="margin-bottom: 30px;">
-                    <option value="Vælg kunde">Vælg kunde</option>
-                    <c:forEach var="email" items="${custs}">
-                        <option name="email">${email}</option>
+                    <option value="Vælg ordre">Vælg ordre</option>
+                    <c:forEach var="todo" items="${todo}">
+                        <option name="todo">${todo}</option>
                     </c:forEach>
 
                 </select>
@@ -93,4 +80,4 @@
     </div>
 </div>
 
-    <%@include file="../include/footer.inc" %>>
+<%@include file="../include/footer.inc" %>>
