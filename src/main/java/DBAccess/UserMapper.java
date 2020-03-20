@@ -262,8 +262,7 @@ public class UserMapper {
         }
     }
 
-    public static ArrayList<Order> getFullOrder(int orderID) {
-        ArrayList<Order> listen = new ArrayList<>();
+    public static Order getFullOrder(int orderID) {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT orders.orderID, date, email, orderLinesID, quantity, sum, topping.navn AS 'topping', bottom.navn AS 'bottom'" +
@@ -273,6 +272,8 @@ public class UserMapper {
                     "WHERE orders.orderID='"+orderID+"';";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
+            
+            Order myOrder;
             while (rs.next()) {
                 Date date = rs.getDate("date");
                 String email = rs.getString("email");
@@ -281,12 +282,13 @@ public class UserMapper {
                 int sum = rs.getInt("sum");
                 String toppingName = rs.getString("topping");
                 String bottomName = rs.getString("bottom");
-                listen.add(new Order(orderID, date, email, orderLinesID, amount, sum, toppingName, bottomName));
+                myOrder = new Order(orderID, date, email, orderLinesID, amount, sum, toppingName, bottomName);
+                return myOrder;
             }
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
-        return listen;
+        return null;
     }
 
 }

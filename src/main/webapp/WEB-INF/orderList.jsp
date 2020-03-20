@@ -59,16 +59,14 @@
             <form action="FrontController" method="POST">
                 <input type="hidden" name="target" value="orderList">
                 <div class="form-group">
-                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="orderSearchID" placeholder="Indtast Ordre ID"/>
+                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="orderSearchID" placeholder="Indtast Ordre ID *"/>
                     <input class="btn btn-primary mb-3" type="submit" value="Søg">
                 </div>
 
                 <div class="container" style="border: 1px solid #A3A3A3;">
                     <div class="container">
                         <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
-                            <c:forEach var="element" items="${sessionScope.orders}">
-                                ${element.toString2()}
-                            </c:forEach>
+                            ${sessionScope.orders.toString2()}
                         </ul>
                     </div>
                 </div>

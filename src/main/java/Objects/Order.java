@@ -51,15 +51,8 @@ public class Order {
     }
 
     public String toString2() {
-        return "Order{" +
-                "orderID=" + orderID +
-                ", date=" + date +
-                ", email='" + email + '\'' +
-                ", orderLinesID=" + orderLinesID +
-                ", amount=" + amount +
-                ", sum=" + sum +
-                ", toppingName='" + toppingName + '\'' +
-                ", bottomName='" + bottomName + '\'' +
-                '}';
+        return "Ordre: " + "\nOrdre ID: " + orderID + ".\nOrdrelinje ID: " + orderLinesID
+                + ".\nAntal: " + amount + ".\nPris: " + sum + " kr.\nBund: " + bottomName + ".\nTopping: " + toppingName
+                + ".\nDato: " + date + ".\nEmail: " + email;
     }
 }

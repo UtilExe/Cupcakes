@@ -14,9 +14,9 @@ public class OrderList extends Command{
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
         int orderSearchID = Integer.parseInt(request.getParameter("orderSearchID"));
-        ArrayList<Order> listen = UserMapper.getFullOrder(orderSearchID);
+        Order order = UserMapper.getFullOrder(orderSearchID);
 
-        session.setAttribute("orders", listen);
+        session.setAttribute("orders", order);
         return "orderList";
     }
 }
