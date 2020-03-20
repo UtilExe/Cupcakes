@@ -22,6 +22,7 @@ abstract class Command {
         commands.put( "addBalance"   , new AddBalance());
         commands.put( "customerList" , new CustomerList());
         commands.put( "orderList"    , new OrderList());
+        commands.put( "removeOrder", new RemoveOrder() );
     }
 
     static Command from( HttpServletRequest request ) {

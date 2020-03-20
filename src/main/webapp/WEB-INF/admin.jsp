@@ -12,14 +12,15 @@
     <%!
         @Override
         public void jspInit(){
-        Initialisation.initEmails();
+            Initialisation.initEmails();
+            Initialisation.initOrders();
         }
 
     %>
 
     <%
-
         request.setAttribute("custs", Initialisation.getUserEmailList());
+        request.setAttribute("orders", Initialisation.getOrderList());
     %>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
@@ -63,49 +64,96 @@
 </nav>
 
 <div class="container jumbotron ">
-    <h1>Vælg hvad du vil:</h1>
-
-    <div class="row"></div>
-    <div class="col-2"></div>
-    <div class="col-4">
-        <form action="FrontController" method="POST">
-            <input type="hidden" name="target" value="addBalance">
-
-            <div class="container mb-4">
-                <div class="row">
-                    <p class="lead mb-1">Vælg kunde</p>
-                </div>
-
-                <div class="row mt-0">
-                    <select id="email" name="email">
-
-                        <option value="Vælg kunde">Vælg kunde</option>
-                        <c:forEach var="email" items="${custs}">
-                            <option name="email">${email}</option>
-                        </c:forEach>
-
-                    </select>
-                </div>
-            </div>
-
-
-            <div class="container mb-4">
-                <div class="row">
-                    <p class="lead mb-1">Indtast beløb i kr.</p>
-                </div>
-                <div class="row mb-2">
-                    <input name="addBalanceAmount" placeholder="Indtast beløb...">
-                </div>
-
-                <div class="row">
-                    <button type="submit" class="btn btn-primary">Udfør</button>
-                </div>
-            </div>
-        </form>
+    <div class="container">
+        <h1 class="display-4 mt-0 mb-5">Vælg hvad du vil:</h1>
     </div>
-    <div class="col-4"></div>
-    <div class="col-2"></div>
 
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4">
+            <form action="FrontController" method="POST">
+                <input type="hidden" name="target" value="addBalance">
+
+                <div class="container mb-4">
+                    <div class="row">
+                        <p class="lead mb-1">Vælg kunde</p>
+                    </div>
+
+                    <div class="row mt-0">
+                        <select name="email">
+
+                            <option value="Vælg kunde">Vælg kunde...</option>
+                            <c:forEach var="email" items="${custs}">
+                                <option name="email">${email}</option>
+                            </c:forEach>
+
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="container mb-4">
+                    <div class="row">
+                        <p class="lead mb-1">Indtast beløb i kr.</p>
+                    </div>
+                    <div class="row mb-2">
+                        <input name="addBalanceAmount" placeholder="Indtast beløb...">
+                    </div>
+
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary">Overfør</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="col-4">
+            <form action="FrontController" method="POST">
+                <input type="hidden" name="target" value="removeOrder">
+
+                <div class="container mb-4">
+                    <div class="row">
+                        <p class="lead mb-1">Fjern ordre hos kunde</p>
+                    </div>
+
+                    <div class="row mt-0">
+                        <select name="email">
+
+                            <option value="Vælg kunde">Vælg kunde...</option>
+                            <c:forEach var="email" items="${custs}">
+                                <option name="email">${email}</option>
+                            </c:forEach>
+
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="container mb-4">
+                    <div class="row">
+                        <p class="lead mb-1">Vælg ordre</p>
+                    </div>
+                    <div class="row mb-2">
+                        <select name="order">
+
+                            <option value="Vælg kunde">Vælg ordre...</option>
+                            <c:forEach var="order" items="${orders}">
+                                <option name="order">${order}</option>
+                            </c:forEach>
+
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary">Fjern</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-2"></div>
+    </div>
 </div>
 
 <%@include file="../include/footer.inc" %>>

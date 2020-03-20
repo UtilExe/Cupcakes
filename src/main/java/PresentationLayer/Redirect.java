@@ -24,6 +24,7 @@ public class Redirect extends Command {
 
         if(destination.equals("admin")) {
             request.setAttribute("custs", Initialisation.getUserEmailList());
+            request.setAttribute("orders", Initialisation.getOrderList());
         }
 
         if(destination.equals("cart")) {
