@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="css/styles.css">
 
-<title>Admin Side</title>
+<title>Kundeliste Side</title>
 </head>
 <body>
 
@@ -32,14 +32,15 @@
         <ul class="navbar-nav mr-auto">
             <ul class="navbar-nav mr-5 mt-60 mt-lg-0">
                 <div class="col-lg-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="FrontController?target=redirect&destination=admin"><h3>Admin</h3>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrontController?target=redirect&destination=admin"><h3>
+                            Admin</h3>
                             <span class="sr-only">(current)</span></a>
                 </div>
                 </li>
                 <li class="nav-item">
                     <ul class="navbar-nav mr-5 mt-20 mt-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="FrontController?target=redirect&destination=customerList"><h3>
                                 Kundeliste</h3></a>
                         </li>
@@ -62,50 +63,34 @@
     </div>
 </nav>
 
-<div class="container jumbotron ">
-    <h1>Vælg hvad du vil:</h1>
+<div class="container jumbotron" style="text-align: center;">
+    <h2 style="margin-bottom: 15px;">Vælg kunden du vil se info om </h2>
 
-    <div class="row"></div>
-    <div class="col-2"></div>
-    <div class="col-4">
-        <form action="FrontController" method="POST">
-            <input type="hidden" name="target" value="addBalance">
+    <div class="col-12">
+        <div class="col-md-auto">
+            <form action="FrontController" method="POST">
+                <input type="hidden" name="target" value="customerList">
 
-            <div class="container mb-4">
-                <div class="row">
-                    <p class="lead mb-1">Vælg kunde</p>
+                <select id="email" name="email" style="margin-bottom: 30px;">
+                    <option value="Vælg kunde">Vælg kunde</option>
+                    <c:forEach var="email" items="${custs}">
+                        <option name="email">${email}</option>
+                    </c:forEach>
+
+                </select>
+
+                <div class="container" style="border: 1px solid #A3A3A3;">
+                    <div class="container">
+                        <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
+                            <c:forEach var="element" items="${sessionScope.todo}">
+                                <li>${element}</li>
+                            </c:forEach>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="row mt-0">
-                    <select id="email" name="email">
-
-                        <option value="Vælg kunde">Vælg kunde</option>
-                        <c:forEach var="email" items="${custs}">
-                            <option name="email">${email}</option>
-                        </c:forEach>
-
-                    </select>
-                </div>
-            </div>
-
-
-            <div class="container mb-4">
-                <div class="row">
-                    <p class="lead mb-1">Indtast beløb i kr.</p>
-                </div>
-                <div class="row mb-2">
-                    <input name="addBalanceAmount" placeholder="Indtast beløb...">
-                </div>
-
-                <div class="row">
-                    <button type="submit" class="btn btn-primary">Udfør</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-    <div class="col-4"></div>
-    <div class="col-2"></div>
-
 </div>
 
-<%@include file="../include/footer.inc" %>>
+    <%@include file="../include/footer.inc" %>>
