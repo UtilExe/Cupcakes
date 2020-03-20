@@ -187,4 +187,27 @@ public class UserMapper {
         }
     }
 
+    public static ArrayList<User> getUserInfo(String email) {
+        ArrayList<User> customerList = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM cupcake.users WHERE email='"+email+"';";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String username = rs.getString("username");
+                //    email = rs.getString("email");
+                String password = rs.getString("password");
+                int mobilNr = rs.getInt("mobil_nr");
+                int saldo = rs.getInt("saldo");
+                User tmp = new User(username, email, password, mobilNr, saldo);
+                customerList.add(tmp);
+            }
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        return customerList;
+    }
+
 }

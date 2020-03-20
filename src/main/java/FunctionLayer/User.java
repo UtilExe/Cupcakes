@@ -26,6 +26,14 @@ public class User {
         this.password = password;
     }
 
+    public User(String username, String email, String password, int mobilNr, int saldo) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.mobilNr = mobilNr;
+        this.saldo = saldo;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -64,5 +72,10 @@ public class User {
 
     public void setSaldo(int saldo) {
         this.saldo = saldo;
+    }
+
+    @Override
+    public String toString() {
+        return "Brugernavn: " + username + ", Email: " + email + ", Kodeord: " + password + ", Mobilnr: " + mobilNr + ", Saldo: " + saldo;
     }
 }

@@ -9,19 +9,6 @@
 </head>
 <body>
 
-    <%!
-        @Override
-        public void jspInit(){
-        Initialisation.initEmails();
-        }
-
-    %>
-
-    <%
-
-        request.setAttribute("custs", Initialisation.getUserEmailList());
-    %>
-
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
     <a class="navbar-brand" href="#"> <img src="./images/logo.png" width="100" height="60" alt="Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -68,29 +55,37 @@
 
     <div class="col-12">
         <div class="col-md-auto">
+
             <form action="FrontController" method="POST">
                 <input type="hidden" name="target" value="customerList">
 
-                <select id="email" name="email" style="margin-bottom: 30px;">
-                    <option value="Vælg kunde">Vælg kunde</option>
-                    <c:forEach var="email" items="${custs}">
-                        <option name="email">${email}</option>
-                    </c:forEach>
-
-                </select>
+                <option value="Vælg kunde">Angiv kunde</option>
+                <div class="form-group"> E-mail adresse
+                    <input type="text" class="form-control" name="email" placeholder="Indtast kundens email *"/>
+                </div>
 
                 <div class="container" style="border: 1px solid #A3A3A3;">
                     <div class="container">
                         <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
-                            <c:forEach var="element" items="${sessionScope.todo}">
-                                <li>${element}</li>
+
+                            <c:forEach var="email" items="${sessionScope.customerList}">
+                                ${email}
+                            <br>
+                                <c:forEach>
+                                    <p>Tidligere ordrer:</p>
+                                    ${orders}
+                                    ${dato}
+                                    <br>
+                                </c:forEach>
                             </c:forEach>
-                        </ul>
-                    </div>
-                </div>
+
+                            <input type="submit" value="Submit">
             </form>
+            </ul>
         </div>
     </div>
 </div>
+</div>
+</div>
 
-    <%@include file="../include/footer.inc" %>>
+<%@include file="../include/footer.inc" %>>
