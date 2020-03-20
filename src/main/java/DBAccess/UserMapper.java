@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * The purpose of UserMapper is to...
@@ -259,6 +260,33 @@ public class UserMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static ArrayList<Order> getFullOrder(int orderID) {
+        ArrayList<Order> listen = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT orders.orderID, date, email, orderLinesID, quantity, sum, topping.navn AS 'topping', bottom.navn AS 'bottom'" +
+                    "FROM cupcake.orders JOIN orderlines ON orders.orderID = orderlines.orderID JOIN topping " +
+                    "ON topping.idTopping = orderlines.toppingID JOIN bottom " +
+                    "ON bottom.idBottom = orderlines.bottomID " +
+                    "WHERE orders.orderID='"+orderID+"';";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Date date = rs.getDate("date");
+                String email = rs.getString("email");
+                int orderLinesID = rs.getInt("orderLinesID");
+                int amount = rs.getInt("quantity");
+                int sum = rs.getInt("sum");
+                String toppingName = rs.getString("topping");
+                String bottomName = rs.getString("bottom");
+                listen.add(new Order(orderID, date, email, orderLinesID, amount, sum, toppingName, bottomName));
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        return listen;
     }
 
 }

@@ -12,28 +12,29 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put( "login"        , new Login() );
-        commands.put( "register"     , new Register() );
-        commands.put( "redirect"     , new Redirect());
-        commands.put( "contact"      , new Contact());
-        commands.put( "buildCupcakes", new BuildCupcake());
-        commands.put( "pay"          , new Payment());
-        commands.put( "fjernordre"   , new EmptyCart());
-        commands.put( "addBalance"   , new AddBalance());
-        commands.put( "customerList" , new CustomerList());
-        commands.put( "orderList"    , new OrderList());
-        commands.put( "removeOrder", new RemoveOrder() );
+        commands.put("login", new Login());
+        commands.put("register", new Register());
+        commands.put("redirect", new Redirect());
+        commands.put("contact", new Contact());
+        commands.put("buildCupcakes", new BuildCupcake());
+        commands.put("pay", new Payment());
+        commands.put("fjernordre", new EmptyCart());
+        commands.put("addBalance", new AddBalance());
+        commands.put("customerList", new CustomerList());
+        commands.put("orderList", new OrderList());
+        commands.put("removeOrder", new RemoveOrder());
+        commands.put("orderList", new OrderList());
     }
 
-    static Command from( HttpServletRequest request ) {
-        String targetName = request.getParameter( "target" );
-        if ( commands == null ) {
+    static Command from(HttpServletRequest request) {
+        String targetName = request.getParameter("target");
+        if (commands == null) {
             initCommands();
         }
-        return commands.getOrDefault(targetName, new UnknownCommand() );   // unknowncommand er default.
+        return commands.getOrDefault(targetName, new UnknownCommand());   // unknowncommand er default.
     }
 
-    abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    abstract String execute(HttpServletRequest request, HttpServletResponse response)
             throws LoginSampleException;
 
 }

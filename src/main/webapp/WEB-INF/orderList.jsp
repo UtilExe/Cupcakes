@@ -1,3 +1,4 @@
+
 <%@ page import="FunctionLayer.Initialisation" %>
 <%@include file="../include/header.inc" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -56,21 +57,17 @@
     <div class="col-12">
         <div class="col-md-auto">
             <form action="FrontController" method="POST">
-                <input type="hidden" name="target" value="customerList">
-
-                <select id="email" name="email" style="margin-bottom: 30px;">
-                    <option value="Vælg ordre">Vælg ordre</option>
-                    <c:forEach var="todo" items="${todo}">
-                        <option name="todo">${todo}</option>
-                    </c:forEach>
-
-                </select>
+                <input type="hidden" name="target" value="orderList">
+                <div class="form-group">
+                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="orderSearchID" placeholder="Indtast Ordre ID"/>
+                    <input class="btn btn-primary mb-3" type="submit" value="Søg">
+                </div>
 
                 <div class="container" style="border: 1px solid #A3A3A3;">
                     <div class="container">
                         <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
-                            <c:forEach var="element" items="${sessionScope.todo}">
-                                <li>${element}</li>
+                            <c:forEach var="element" items="${sessionScope.orders}">
+                                ${element.toString2()}
                             </c:forEach>
                         </ul>
                     </div>
