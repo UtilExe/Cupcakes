@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
 /**
  * The purpose of UserMapper is to...
@@ -208,6 +210,25 @@ public class UserMapper {
             ex.printStackTrace();
         }
         return customerList;
+    }
+
+    public static HashMap<Integer, Date> getCustOrders(String email) {
+        HashMap<Integer, Date> custOrderList = new HashMap<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT orderID, date FROM cupcake.orders WHERE email='" + email + "';";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int orderID = rs.getInt("orderID");
+                Date date = rs.getDate( "date");
+                custOrderList.put(orderID, date);
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("Kan ikke kommunikere korrekt med databasen.");
+        }
+
+        return custOrderList;
     }
 
     public static ArrayList<Integer> getOrders() {

@@ -71,10 +71,10 @@
                             <c:forEach var="email" items="${sessionScope.customerList}">
                                 ${email}
                             <br>
-                                <c:forEach>
-                                    <p>Tidligere ordrer:</p>
-                                    ${orders}
-                                    ${dato}
+
+                                <p>Tidligere ordrer:</p>
+                                <c:forEach var="order" items="${custOrders}">
+                                    ${custOrders}
                                     <br>
                                 </c:forEach>
                             </c:forEach>
