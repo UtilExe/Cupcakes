@@ -10,8 +10,16 @@ public class AddBalance extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         String email = request.getParameter("email");
-        //UserMapper.addSaldo(email);
+        int amount;
+
+        try {
+            amount = Integer.parseInt(request.getParameter("addBalanceAmount"));
+            UserMapper.addBalanceToSaldo(email, amount);
+        } catch(Exception e) {
+            request.setAttribute("addBalanceError", "Du har ikke indtastet et tal.");
+        }
 
         return "admin";
     }
+
 }

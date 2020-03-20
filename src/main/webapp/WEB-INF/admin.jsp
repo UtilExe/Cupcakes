@@ -68,25 +68,40 @@
     <div class="row"></div>
     <div class="col-2"></div>
     <div class="col-4">
-        <div class="row">
-            <p>Vælg kunde</p>
-            <form action="FrontController" method="POST">
-                <input type="hidden" name="target" value="addBalance">
+        <form action="FrontController" method="POST">
+            <input type="hidden" name="target" value="addBalance">
 
-                <select id="email" name="email">
+            <div class="container mb-4">
+                <div class="row">
+                    <p class="lead mb-1">Vælg kunde</p>
+                </div>
 
-                    <option value="Vælg kunde">Vælg kunde</option>
-                    <c:forEach var="email" items="${custs}">
-                        <option name="email">${email}</option>
-                    </c:forEach>
+                <div class="row mt-0">
+                    <select id="email" name="email">
 
-                </select>
+                        <option value="Vælg kunde">Vælg kunde</option>
+                        <c:forEach var="email" items="${custs}">
+                            <option name="email">${email}</option>
+                        </c:forEach>
 
-            </form>
-        </div>
-        <div class="row">
+                    </select>
+                </div>
+            </div>
 
-        </div>
+
+            <div class="container mb-4">
+                <div class="row">
+                    <p class="lead mb-1">Indtast beløb i kr.</p>
+                </div>
+                <div class="row mb-2">
+                    <input name="addBalanceAmount" placeholder="Indtast beløb...">
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="btn btn-primary">Udfør</button>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="col-4"></div>
     <div class="col-2"></div>

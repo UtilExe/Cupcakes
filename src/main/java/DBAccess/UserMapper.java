@@ -176,4 +176,15 @@ public class UserMapper {
         return temp;
     }
 
+    public static void addBalanceToSaldo(String email, int amount) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE users SET saldo=saldo+"+amount+" WHERE email='"+email+"';";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }
