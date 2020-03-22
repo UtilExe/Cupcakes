@@ -59,7 +59,7 @@
             <form action="FrontController" method="POST">
                 <input type="hidden" name="target" value="orderList">
                 <div class="form-group">
-                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="orderSearchID" placeholder="Indtast Ordre ID *"/>
+                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="orderSearchID" placeholder="Indtast Ordre ID..."/>
                 </div>
 
                 <input class="btn btn-primary mb-3" type="submit" value="Søg">

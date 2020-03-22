@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="row mt-0">
-                        <select name="email">
+                        <select class="form-control-smaller" name="email">
 
                             <option value="Vælg kunde">Vælg kunde...</option>
                             <c:forEach var="email" items="${custs}">
@@ -97,7 +97,7 @@
                         <p class="lead mb-1">Indtast beløb i kr.</p>
                     </div>
                     <div class="row mb-2">
-                        <input name="addBalanceAmount" placeholder="Indtast beløb...">
+                        <input name="addBalanceAmount" class="form-control-smaller" placeholder="Indtast beløb...">
                     </div>
 
                     <div class="row">
@@ -118,7 +118,7 @@
                     </div>
 
                     <div class="row mt-0">
-                        <select name="email">
+                        <select class="form-control-smaller" name="email">
 
                             <option value="Vælg kunde">Vælg kunde...</option>
                             <c:forEach var="email" items="${custs}">
@@ -135,7 +135,7 @@
                         <p class="lead mb-1">Vælg ordre</p>
                     </div>
                     <div class="row mb-2">
-                        <select name="order">
+                        <select class="form-control-smaller" name="order">
 
                             <option value="Vælg kunde">Vælg ordre...</option>
                             <c:forEach var="order" items="${orders}">

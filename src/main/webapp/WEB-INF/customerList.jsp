@@ -61,7 +61,7 @@
 
 
                 <div class="form-group">
-                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="email" placeholder="Indtast kundens email *"/>
+                    <input type="text" class="form-control w-50 p-3" style="margin-left: auto; margin-right: auto;" name="email" placeholder="Indtast kundens email..."/>
                 </div>
 
                 <input class="btn btn-primary mb-3" type="submit" value="Søg">

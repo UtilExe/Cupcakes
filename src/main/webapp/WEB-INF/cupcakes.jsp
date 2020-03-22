@@ -8,12 +8,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@include file="/include/header.inc" %>
+<link rel="stylesheet" href="css/styles.css">
 
 <title>Cupcakes</title>
 
 
 </head>
-<link rel="stylesheet" href="css/styles.css">
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
@@ -89,7 +90,7 @@
                     <input type="hidden" name="target" value="buildCupcakes">
 
 
-                    <select id="bund" name="bund">
+                    <select class="form-control-smaller" id="bund" name="bund">
 
                         <option value="Vælg Bund">Vælg Bund</option>
                         <c:forEach var="bottom" items="${bottoms}">
@@ -99,7 +100,7 @@
                     </select>
             </div>
             <div class="col-3">
-                <select id="top" name="top">
+                <select class="form-control-smaller" id="top" name="top">
                     <option value="Vælg Topping">Vælg Topping</option>
                     <c:forEach var="topping" items="${toppings}">
                         <option name="top"> ${topping.name}, ${topping.price} kr.</option>
@@ -108,7 +109,7 @@
             </div>
             <div class="col-3">
 
-                <input name="antal" type="text" id="antal" placeholder="Skriv antal...">
+                <input name="antal" type="text" id="antal" class="form-control-smaller" placeholder="Skriv antal...">
 
             </div>
             <div class="text-right">

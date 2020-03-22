@@ -15,6 +15,14 @@
 .form-control{
     border-radius:1.5rem;
 }
+
+.form-control-smaller {
+    border-radius:1.5rem;
+    padding: 2px 2px 2px 5px;
+    min-width: 150px;
+    max-width: 151px;
+}
+
 .btnSubmit
 {
     /* center button:: */
@@ -114,3 +122,4 @@
     background: #0062cc;
     color: #fff;
 }
+
