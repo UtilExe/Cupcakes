@@ -24,14 +24,26 @@ public class BuildCupcake extends Command {
 
         HttpSession session = request.getSession();
 
-        int antal = Integer.parseInt(request.getParameter("antal"));
+
+        String tmpAntal = request.getParameter("antal");
         String bottom = request.getParameter("bund");
         String topping = request.getParameter("top");
+
+
+        if(tmpAntal.equals("") | bottom.equals("") | topping.equals("")) {
+            request.setAttribute("BuildCupcakeBesked", "Du udfyldte ikke alle felter");
+            request.setAttribute("toppings", Initialisation.getToppingList());
+            request.setAttribute("bottoms", Initialisation.getBottomsList());
+            return "cupcakes";
+        }
+
+        int antal = Integer.parseInt(tmpAntal);
+
 
         Cupcake temp = new Cupcake(getBottom(bottoms, bottom), getTopping(toppings, topping), antal);
         cart.add(temp);
 
-        request.setAttribute("beskedTilføjet", "Din cupcake er tilføjet til kurven.");
+        request.setAttribute("BuildCupcakeBesked", "Din cupcake er tilføjet til kurven.");
 
         request.setAttribute("toppings", Initialisation.getToppingList());
         request.setAttribute("bottoms", Initialisation.getBottomsList());
