@@ -9,6 +9,8 @@ CREATE TABLE `cupcake`.`users` (
   `mobil_nr` INT(8) NULL,
   `saldo` INT NOT NULL DEFAULT 500,
   PRIMARY KEY (`email`));
+  
+  INSERT INTO `users` (`username`, `email`, `password`, `saldo`) VALUES ('Admin', 'admin@admin.dk', 'admin', 10000);
 
 CREATE TABLE `cupcake`.`orders` (
   `orderID` INT NOT NULL AUTO_INCREMENT,

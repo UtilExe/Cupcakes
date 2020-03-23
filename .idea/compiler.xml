@@ -7,16 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CupC" />
-        <module name="Projektskabelon" />
+        <module name="prejektSkabelon" />
         <module name="ProjektSkabelon-master" />
         <module name="Projektskabelon-master" />
-        <module name="prejektSkabelon" />
+        <module name="Projektskabelon" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="CupC" options="-endorseddirs C:\Users\Jannich\Documents\IntelliJ\Cupcakes\target/endorsed" />
+      <module name="CupC" options="-endorseddirs &quot;C:\Users\Danie\Documents\Skole\Cphbusiness\2. Semester (2020)\Cupcake Projekt\Cupcakes\target/endorsed&quot;" />
       <module name="ProjektSkabelon-master" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
       <module name="Projektskabelon" options="-endorseddirs &quot;$PROJECT_DIR$/target/endorsed&quot;" />
       <module name="Projektskabelon-master" options="-endorseddirs $PROJECT_DIR$/target/endorsed" />

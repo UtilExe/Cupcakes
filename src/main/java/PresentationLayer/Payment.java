@@ -20,7 +20,7 @@ public class Payment extends Command {
         String email = String.valueOf(session.getAttribute("email"));
 
         if(!(email.contains("@"))) {
-            request.setAttribute("beskedFejlLogin", "Du skal være logget ind for at oprette en ordre.");
+            request.setAttribute("beskedPayment", "Du skal være logget ind for at oprette en ordre.");
             BuildCupcake.cart.clear();
             session.setAttribute("total", 0);
             return "createAccount";
@@ -39,7 +39,12 @@ public class Payment extends Command {
 
             UserMapper.adjustSaldo(email, getTotal(BuildCupcake.cart));
 
-            request.setAttribute("beskedSuccessBetal", "Din ordre er oprettet og du kan nu hente den i butikken!");
+            if(BuildCupcake.cart.isEmpty()) {
+                request.setAttribute("beskedPayment", "Din indkøbskurv er tom!");
+            } else {
+                request.setAttribute("beskedPayment", "Ordre oprettet, den kan nu hentes i butikken!");
+            }
+
 
             BuildCupcake.cart.clear();
             session.setAttribute("total", 0);

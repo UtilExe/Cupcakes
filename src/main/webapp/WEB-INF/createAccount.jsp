@@ -74,7 +74,7 @@
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-6">
-                            ${requestScope.beskedFejlLogin}
+                            ${requestScope.beskedPayment}
                             <div class="form-group"> E-mail adresse
                                 <input type="text" class="form-control" name="email" placeholder="Indtast email *" value=""/>
                             </div>
