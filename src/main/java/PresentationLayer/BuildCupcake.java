@@ -31,7 +31,7 @@ public class BuildCupcake extends Command {
 
 
         if(tmpAntal.equals("") | bottom.equals("") | topping.equals("")) {
-            request.setAttribute("BuildCupcakeBesked", "Du udfyldte ikke alle felter");
+            request.setAttribute("BuildCupcakeBesked1", "Du udfyldte ikke alle felter");
             request.setAttribute("toppings", Initialisation.getToppingList());
             request.setAttribute("bottoms", Initialisation.getBottomsList());
             return "cupcakes";
@@ -43,7 +43,7 @@ public class BuildCupcake extends Command {
         Cupcake temp = new Cupcake(getBottom(bottoms, bottom), getTopping(toppings, topping), antal);
         cart.add(temp);
 
-        request.setAttribute("BuildCupcakeBesked", "Din cupcake er tilføjet til kurven.");
+        request.setAttribute("BuildCupcakeBesked2", "Din cupcake er tilføjet til kurven.");
 
         request.setAttribute("toppings", Initialisation.getToppingList());
         request.setAttribute("bottoms", Initialisation.getBottomsList());

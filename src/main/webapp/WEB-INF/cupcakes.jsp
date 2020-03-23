@@ -118,7 +118,8 @@
 
 
             </div>
-                <p>${requestScope.BuildCupcakeBesked}</p>
+                <p class="beskedRød">${requestScope.BuildCupcakeBesked1}</p>
+                <p class="beskedGrøn">${requestScope.BuildCupcakeBesked2}</p>
 
             </form>
 

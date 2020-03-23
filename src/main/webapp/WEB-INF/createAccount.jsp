@@ -9,10 +9,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 
-<!DOCTYPE html>
-<html>
+
 <%@include file="../include/header.inc" %>
 <link rel="stylesheet" href="css/styles.css">
+<title>Opret Bruger</title>
+</head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F6F8F9;">
@@ -74,7 +76,6 @@
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-6">
-                            ${requestScope.beskedPayment}
                             <div class="form-group"> E-mail adresse
                                 <input type="text" class="form-control" name="email" placeholder="Indtast email *" value=""/>
                             </div>
@@ -89,11 +90,13 @@
                                        value=""/>
                             </div>
                             <div class="form-group"> Dit telefon-nummer
-                                <input type="text" class="form-control" name="mobilNr" placeholder="Indtast dit telefon-nummer *"
+                                <input type="number" class="form-control" name="mobilNr" placeholder="Indtast dit telefon-nummer *"
                                        value=""/>
                             </div>
                         </div>
                     </div>
+                    <p class="beskedRød">${requestScope.createAccountBesked1}</p>
+                    <p class="beskedGrøn">${requestScope.createAccountBesked2}</p>
                     <button type="submit" class="btnSubmit" style="text-align: center">Submit</button>
                 </div>
                     </form>

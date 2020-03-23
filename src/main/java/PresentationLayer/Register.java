@@ -14,7 +14,20 @@ public class Register extends Command {
         String username = request.getParameter( "username" );
         String email = request.getParameter( "email" );
         String password = request.getParameter( "password" );
-        int mobilNr = Integer.parseInt((request.getParameter("mobilNr")).replace(" ", ""));
+        String tmpMobilNr = (request.getParameter("mobilNr")).replace(" ", "");
+        int mobilNr = 0;
+
+        if(!(tmpMobilNr.equals(""))) {
+            mobilNr = Integer.parseInt(tmpMobilNr);
+        } else {
+            request.setAttribute("createAccountBesked1", "Du har ikke udfyldt alle felter");
+            return "createAccount";
+        }
+
+        if(username.equals("") | email.equals("") | password.equals("") | mobilNr == 0) {
+            request.setAttribute("createAccountBesked1", "Du har ikke udfyldt alle felter");
+            return "createAccount";
+        }
 
         try {
             User user = LogicFacade.createUser(username, email, password, mobilNr);
@@ -27,6 +40,7 @@ public class Register extends Command {
         request.setAttribute("email", email);
         request.setAttribute("password", password);
         request.setAttribute("mobilNr", mobilNr);
+        request.setAttribute("createAccountBesked2", "Du er nu oprettet!");
           /*  session.setAttribute("email",email);
             session.setAttribute( "user", user );
 
