@@ -97,7 +97,7 @@
                         <p class="lead mb-1">Indtast beløb i kr.</p>
                     </div>
                     <div class="row mb-2">
-                        <input name="addBalanceAmount" class="form-control-smaller" placeholder="Indtast beløb...">
+                        <input type="number" name="addBalanceAmount" class="form-control-smaller" placeholder="Indtast beløb...">
                     </div>
 
                     <div class="row">
