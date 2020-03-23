@@ -10,7 +10,7 @@ CREATE TABLE `cupcake`.`users` (
   `saldo` INT NOT NULL DEFAULT 500,
   PRIMARY KEY (`email`));
   
-  INSERT INTO `users` (`username`, `email`, `password`, `saldo`) VALUES ('Admin', 'admin@admin.dk', 'admin', 10000);
+  INSERT INTO `users` (`username`, `email`, `password`, `saldo`) VALUES ('Admin', 'admin@admin.com', 'admin', 10000);
 
 CREATE TABLE `cupcake`.`orders` (
   `orderID` INT NOT NULL AUTO_INCREMENT,
