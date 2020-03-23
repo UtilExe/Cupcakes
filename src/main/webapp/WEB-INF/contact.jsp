@@ -69,7 +69,7 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-            ${requestScope.besked}
+            ${requestScope.beskedContact}
         </div>
         <div class="col-4"></div>
     </div>

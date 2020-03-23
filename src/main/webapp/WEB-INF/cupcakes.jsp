@@ -92,7 +92,7 @@
 
                     <select class="form-control-smaller" id="bund" name="bund">
 
-                        <option value="Vælg Bund">Vælg Bund</option>
+                        <option value="">Vælg Bund</option>
                         <c:forEach var="bottom" items="${bottoms}">
                             <option name="bund"> ${bottom.name}, ${bottom.price} kr.</option>
                         </c:forEach>
@@ -101,7 +101,7 @@
             </div>
             <div class="col-3">
                 <select class="form-control-smaller" id="top" name="top">
-                    <option value="Vælg Topping">Vælg Topping</option>
+                    <option value="">Vælg Topping</option>
                     <c:forEach var="topping" items="${toppings}">
                         <option name="top"> ${topping.name}, ${topping.price} kr.</option>
                     </c:forEach>
@@ -109,7 +109,7 @@
             </div>
             <div class="col-3">
 
-                <input name="antal" type="text" id="antal" class="form-control-smaller" placeholder="Skriv antal...">
+                <input name="antal" type="number" id="antal" class="form-control-smaller" placeholder="Skriv antal...">
 
             </div>
             <div class="text-right">
@@ -118,7 +118,7 @@
 
 
             </div>
-                <p>${requestScope.beskedTilføjet}</p>
+                <p>${requestScope.BuildCupcakeBesked}</p>
 
             </form>
 
