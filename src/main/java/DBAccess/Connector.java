@@ -40,9 +40,10 @@ public class Connector {
             PASSWORD = System.getenv("JDBC_PASSWORD");
         } else {
             // Localhost
-            URL = "jdbc:mysql://localhost:3306/cupcake?serverTimezone=CET&useSSL=false";
+            /*URL = "jdbc:mysql://localhost:3306/cupcake?serverTimezone=CET&useSSL=false";
             USERNAME = DBLogin.username;
-            PASSWORD = DBLogin.password;
+            PASSWORD = DBLogin.password;*/
+            System.out.println("Du har ikke ordentlig forbindelse til dine setenv.sh fil.");
         }
 
     }
