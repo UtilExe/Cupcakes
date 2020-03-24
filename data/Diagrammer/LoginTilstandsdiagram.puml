@@ -1,0 +1,24 @@
+@startuml
+
+Title Logging in
+State index.jsp
+State "index.jsp" as error
+
+[*] -> index.jsp
+Login --> [*] : user and pw OK
+error --> index.jsp : try-again
+Login --> error : user or pw not OK
+error : Return to index.jsp with error msg.
+
+index.jsp --> Login : in dropdown menu
+state "Login" as Login {
+state "LoginCustomer" as LoginType1
+state "LoginAdmin" as LoginType2
+[*] --> LoginType1
+LoginType1 : Using customer mail and pw.
+[*] --> LoginType2
+LoginType2 : Using "admin@admin.com" user and pw.
+}
+note top of Login : Login info stored in session
+
+@enduml
