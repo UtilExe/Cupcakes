@@ -2,15 +2,15 @@
 
 actor Bruger
 boundary index.jsp
-control Initialisation
-control UserMapper
-database Database
+boundary cupcakes.jsp
 control FrontController
-
-
-
-
-Bruger -> index.jsp : start
+entity Command
+participant Initialisation
+participant Redirect
+participant BuildCupcake
+participant UserMapper
+database Database
+Bruger -> index.jsp : jspInit()
 index.jsp -> Initialisation : initToppings(), initBottoms()
 Initialisation -> UserMapper : getBottom(), getTopping()
 UserMapper -> Database : executeQuery()
@@ -19,9 +19,19 @@ UserMapper --> Initialisation : initBottoms(), initToppings()
 Initialisation --> index.jsp : jspInit()
 index.jsp -> FrontController : Http POST "redirect"
 FrontController -> Command : søg i hashmap
-Command -> FrontController : Redirect
+Command --> FrontController : Redirect
 FrontController -> Redirect : validér destination
-boundary cupcake.jsp
-Redirect -> cupcake.jsp :
+Redirect --> FrontController : SetAttributes + return destination
+
+FrontController -> cupcakes.jsp
+cupcakes.jsp -> FrontController : HttpPost "buildCupcakes"
+FrontController -> Command : søg i hashmap
+Command --> FrontController : BuildCupcake
+FrontController -> BuildCupcake
+BuildCupcake -> UserMapper : getBottom(), getTopping()
+UserMapper -> Database : executeQuery()
+Database --> UserMapper : resultat
+UserMapper --> BuildCupcake : ArrayList Bottom/Topping
+BuildCupcake -> cupcakes.jsp : Byg cupcakes+Tilføj til kurv
 
 @enduml
