@@ -1,0 +1,27 @@
+@startuml
+
+actor Bruger
+boundary index.jsp
+control Initialisation
+control UserMapper
+database Database
+control FrontController
+
+
+
+
+Bruger -> index.jsp : start
+index.jsp -> Initialisation : initToppings(), initBottoms()
+Initialisation -> UserMapper : getBottom(), getTopping()
+UserMapper -> Database : executeQuery()
+Database --> UserMapper : laver lister
+UserMapper --> Initialisation : initBottoms(), initToppings()
+Initialisation --> index.jsp : jspInit()
+index.jsp -> FrontController : Http POST "redirect"
+FrontController -> Command : søg i hashmap
+Command -> FrontController : Redirect
+FrontController -> Redirect : validér destination
+boundary cupcake.jsp
+Redirect -> cupcake.jsp :
+
+@enduml
