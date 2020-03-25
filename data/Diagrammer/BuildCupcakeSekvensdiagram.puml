@@ -1,5 +1,7 @@
 @startuml
 
+title BuildCupcakeSekvens
+autonumber
 actor Bruger
 boundary index.jsp
 boundary cupcakes.jsp

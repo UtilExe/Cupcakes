@@ -1,0 +1,29 @@
+@startuml
+
+title LoginSekvens
+autonumber
+actor User
+boundary index.jsp
+collections dropdownMenu
+control FrontController
+entity Command
+participant Login
+participant LogicFacade
+participant UserMapper
+database MySQL
+User -> dropdownMenu : Username and Password
+dropdownMenu -> FrontController : http POST "login"
+FrontController -> Command : søg i hashmap
+Command --> FrontController : resultat
+FrontController -> Login
+Login -> LogicFacade : login()
+LogicFacade -> UserMapper : login()
+UserMapper -> MySQL : executeQuery()
+MySQL --> UserMapper : resultat
+UserMapper --> LogicFacade : resultat
+LogicFacade --> Login : resultat
+Login -> index.jsp
+
+
+
+@enduml
