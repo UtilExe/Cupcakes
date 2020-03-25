@@ -4,17 +4,14 @@ import Objects.Bottom;
 import FunctionLayer.LoginSampleException;
 import Objects.Order;
 import Objects.Topping;
-import FunctionLayer.User;
+import Objects.User;
 
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * The purpose of UserMapper is to...

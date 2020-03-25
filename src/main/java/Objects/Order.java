@@ -50,7 +50,7 @@ public class Order {
         return "Ordre ID: [" + orderID + "] Dato: [" + date + "]";
     }
 
-    public String toString2() {
+    public String toStringAdmin() {
         return "Ordre: " + "\nOrdre ID: " + orderID + ".\nOrdrelinje ID: " + orderLinesID
                 + ".\nAntal: " + amount + ".\nPris: " + sum + " kr.\nBund: " + bottomName + ".\nTopping: " + toppingName
                 + ".\nDato: " + date + ".\nEmail: " + email;

@@ -1,0 +1,52 @@
+@startuml
+
+
+
+package "Objects" {
+    Order "1" --{ "*" Cupcake
+    Cupcake "1" --{ "*" Topping
+    Cupcake "1" --{ "*" Bottom
+}
+
+class Order {
+    orderID;
+    date;
+    email;
+    orderLinesID;
+    amount;
+    sum;
+    toppingName;
+    bottomName;
+}
+
+class Cupcake {
+    bottom;
+    topping;
+    quantity;
+}
+
+class Topping {
+    id;
+    name;
+    price;
+}
+
+class Bottom {
+    id;
+    name;
+    price;
+}
+
+class User {
+    username;
+    email;
+    password;
+    mobilNr;
+    saldo;
+}
+
+package "PresentationLayer" {
+
+}
+
+@enduml

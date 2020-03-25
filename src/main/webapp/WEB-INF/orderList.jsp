@@ -66,7 +66,7 @@
                 <div class="container" style="border: 1px solid #A3A3A3;">
                     <div class="container">
                         <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
-                            ${sessionScope.orders.toString2()}
+                            ${sessionScope.orders.toStringAdmin()}
                         </ul>
                     </div>
                 </div>
