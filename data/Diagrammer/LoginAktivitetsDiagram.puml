@@ -9,7 +9,7 @@ start
 repeat : Input
  if(email exits) then (yes)
  if(password correct) then (yes)
- if(email="admin") then (yes)
+ if(email=admin@) then (yes)
  stop
  else(no)
  stop
