@@ -1,0 +1,19 @@
+@startuml
+
+Title Creating Account
+State createAccount.jsp
+State "createAccount.jsp" as error
+
+[*] -> createAccount.jsp
+Register --> [*] :  email doesn't exist in DB
+error --> createAccount.jsp : try-again
+Register --> error : email exists in DB
+error : Return to createAccount.jsp with error msg.
+
+createAccount.jsp --> Register : Inserts "navn", "email", "kodeord", "tlf".
+state "Register" as Register {
+
+}
+note top of Register : Register info stored in DB (users)
+
+@enduml
