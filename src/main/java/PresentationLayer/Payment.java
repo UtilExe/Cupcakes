@@ -10,8 +10,15 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 public class Payment extends Command {
+
+     /**
+     @author Daniel, Emil, Jannich, Jimmy
+     @param email - Gets the session email as an Object and converts email to a String.
+     @return If the user is not logged in, it will return createAccount.jsp, else cart.jsp
+     */
+
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
 
         String email = String.valueOf(session.getAttribute("email"));
@@ -53,6 +60,11 @@ public class Payment extends Command {
         return "cart";
     }
 
+     /**
+      *
+      * @param total is the sum of all total cupcakes in the cart.
+      * @return total
+      */
     public static int getTotal(ArrayList<Cupcake> cart) {
         int total = 0;
         for (Cupcake c: BuildCupcake.cart) {

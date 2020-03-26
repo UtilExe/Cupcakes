@@ -11,8 +11,15 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
 public class CustomerList extends Command  {
+
+    /**
+     @author Daniel, Emil, Jannich, Jimmy
+     @param email - Gets the email parameter from customerList.jsp
+     @return returns customerList.jsp after setting the attributes for the customer's information.
+     */
+
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) {
 
         String email = request.getParameter( "email" );
         ArrayList<User> customerList = UserMapper.getUserInfo(email);
