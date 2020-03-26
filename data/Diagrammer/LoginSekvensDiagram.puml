@@ -1,6 +1,6 @@
 @startuml
 
-title LoginSekvens
+title LoginSequence
 autonumber
 actor User
 boundary index.jsp

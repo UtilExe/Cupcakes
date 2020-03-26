@@ -1,11 +1,11 @@
 @startuml
-
-
+Title Domain Model
 
 package "Objects" {
     Order "1" --{ "*" Cupcake
     Cupcake "1" --{ "*" Topping
     Cupcake "1" --{ "*" Bottom
+    User "1" --{ "*" Order
 }
 
 class Order {
@@ -43,10 +43,6 @@ class User {
     password;
     mobilNr;
     saldo;
-}
-
-package "PresentationLayer" {
-
 }
 
 @enduml

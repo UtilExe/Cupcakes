@@ -1,6 +1,6 @@
 @startuml
 
-title BuildCupcakeSekvens
+title BuildCupcakeSequence
 autonumber
 actor Bruger
 boundary index.jsp
