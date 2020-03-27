@@ -76,7 +76,7 @@
         <div class="container" style="border: 1px solid #A3A3A3;">
             <div class="container">
                 <ul class="lead" style="padding-bottom: 20%; margin-bottom: 0;">
-                    <c:forEach var="element" items="${sessionScope.kurv}">
+                    <c:forEach var="element" items="${sessionScope.cart}">
                         <li>${element}</li>
                     </c:forEach>
                 </ul>

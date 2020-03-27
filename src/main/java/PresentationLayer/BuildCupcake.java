@@ -10,7 +10,10 @@ import Objects.Topping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+
+import static javax.swing.text.html.CSS.getAttribute;
 
 
 public class BuildCupcake extends Command {
@@ -23,7 +26,8 @@ public class BuildCupcake extends Command {
         ArrayList<Topping> toppings = UserMapper.getTopping();
 
         HttpSession session = request.getSession();
-
+        session.setAttribute("cart", new ArrayList<Cupcake>());
+        cart = (ArrayList<Cupcake>) session.getAttribute("cart");
 
         String tmpAntal = request.getParameter("antal");
         String bottom = request.getParameter("bund");
@@ -48,6 +52,7 @@ public class BuildCupcake extends Command {
         request.setAttribute("toppings", Initialisation.getToppingList());
         request.setAttribute("bottoms", Initialisation.getBottomsList());
         session.setAttribute("cart", cart);
+
 
         return "cupcakes";
 

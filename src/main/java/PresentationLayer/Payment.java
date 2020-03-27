@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
+import static PresentationLayer.BuildCupcake.cart;
+
 public class Payment extends Command {
 
      /**
@@ -20,6 +22,7 @@ public class Payment extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
+        cart = (ArrayList<Cupcake>) session.getAttribute("cart");
 
         String email = String.valueOf(session.getAttribute("email"));
 
@@ -33,7 +36,7 @@ public class Payment extends Command {
         try {
             UserMapper.createOrder(email);
 
-            for (Cupcake c : BuildCupcake.cart) {
+            for (Cupcake c : cart) {
                 int quantity = c.getQuantity();
                 int sum = (c.getBottomPrice() + c.getToppingPrice()) * quantity;
                 int toppingID = c.getToppingID();
@@ -41,16 +44,16 @@ public class Payment extends Command {
                 UserMapper.createOrderLine(email, quantity, sum, toppingID, bottomID);
             }
 
-            UserMapper.adjustSaldo(email, getTotal(BuildCupcake.cart));
+            UserMapper.adjustSaldo(email, getTotal(cart));
 
-            if(BuildCupcake.cart.isEmpty()) {
+            if(cart.isEmpty()) {
                 request.setAttribute("beskedPayment1", "Din indkøbskurv er tom!");
             } else {
                 request.setAttribute("beskedPayment2", "Ordre oprettet, den kan nu hentes i butikken!");
             }
 
 
-            BuildCupcake.cart.clear();
+            cart.clear();
             session.setAttribute("total", 0);
 
         } catch(Exception e) {
@@ -67,7 +70,7 @@ public class Payment extends Command {
       */
     public static int getTotal(ArrayList<Cupcake> cart) {
         int total = 0;
-        for (Cupcake c: BuildCupcake.cart) {
+        for (Cupcake c: cart) {
             total += (c.getBottomPrice()+c.getToppingPrice())*c.getQuantity();
         }
         return total;
