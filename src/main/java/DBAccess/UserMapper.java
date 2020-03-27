@@ -127,7 +127,6 @@ public class UserMapper {
             ps.executeUpdate();
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
-            System.out.println(email);
         }
     }
 

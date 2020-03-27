@@ -50,6 +50,7 @@ public class BuildCupcake extends Command {
         session.setAttribute("cart", cart);
 
         return "cupcakes";
+
     }
 
     public static Topping getTopping(ArrayList<Topping> toppings, String topping) {
@@ -66,7 +67,6 @@ public class BuildCupcake extends Command {
 
     public static Bottom getBottom(ArrayList<Bottom> bottoms, String bottom) {
         for (Bottom b: bottoms) {
-            System.out.println(b.getName());
             if(bottom.contains(b.getName())) {
                 Bottom bot = new Bottom(b.getID(),b.getName(),b.getPrice());
                 return bot;

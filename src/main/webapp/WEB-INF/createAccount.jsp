@@ -77,7 +77,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group"> E-mail adresse
-                                <input type="text" class="form-control" name="email" placeholder="Indtast email *" value=""/>
+                                <input type="email" class="form-control" name="email" placeholder="Indtast email *" value=""/>
                             </div>
                             <div class="form-group"> Dit kodeord
                                 <input type="password" class="form-control" name="password" placeholder="Indtast kodeord *" value=""/>
