@@ -33,7 +33,7 @@ public class Redirect extends Command {
         }
 
         if (destination.equals("cart")) {
-            if (!() {
+            if (!(cart == null)) {
                 int total = 0;
                 for (Cupcake c : cart) {
                     total += (c.getBottomPrice() + c.getToppingPrice()) * c.getQuantity();
