@@ -26,7 +26,9 @@ public class BuildCupcake extends Command {
         ArrayList<Topping> toppings = UserMapper.getTopping();
 
         HttpSession session = request.getSession();
-        session.setAttribute("cart", new ArrayList<Cupcake>());
+        if(cart == null) {
+            session.setAttribute("cart", new ArrayList<Cupcake>());
+        }
         cart = (ArrayList<Cupcake>) session.getAttribute("cart");
 
         String tmpAntal = request.getParameter("antal");

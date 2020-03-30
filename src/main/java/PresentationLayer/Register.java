@@ -34,12 +34,7 @@ public class Register extends Command {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-            HttpSession session = request.getSession();
 
-        request.setAttribute("username", username);
-        request.setAttribute("email", email);
-        request.setAttribute("password", password);
-        request.setAttribute("mobilNr", mobilNr);
         request.setAttribute("createAccountBesked2", "Du er nu oprettet!");
 
             return "createAccount";
