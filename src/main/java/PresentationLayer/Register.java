@@ -41,10 +41,7 @@ public class Register extends Command {
         request.setAttribute("password", password);
         request.setAttribute("mobilNr", mobilNr);
         request.setAttribute("createAccountBesked2", "Du er nu oprettet!");
-          /*  session.setAttribute("email",email);
-            session.setAttribute( "user", user );
 
-           */
             return "createAccount";
         }
     }
