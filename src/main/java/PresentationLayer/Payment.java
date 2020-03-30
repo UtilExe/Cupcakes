@@ -50,7 +50,6 @@ public class Payment extends Command {
                 request.setAttribute("beskedPayment2", "Ordre oprettet, den kan nu hentes i butikken!");
             }
 
-
             cart.clear();
             session.setAttribute("total", 0);
 
