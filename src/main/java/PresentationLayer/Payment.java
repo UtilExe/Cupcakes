@@ -28,8 +28,6 @@ public class Payment extends Command {
 
         if(!(email.contains("@"))) {
             request.setAttribute("createAccountBesked1", "Du skal være logget ind for at oprette en ordre.");
-            //BuildCupcake.cart.clear();
-            //session.setAttribute("total", 0);
             return "createAccount";
         }
 

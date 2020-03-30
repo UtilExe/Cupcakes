@@ -105,13 +105,6 @@ public class UserMapper {
                 bottomList.add(new Bottom(ID, name, price));
             }
 
-            /*
-            RETURNERER NULL HVIS VI CLOSER. HVORFOR?
-            con.close();
-            ps.close();
-            rs.close();
-            */
-
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println("Kan ikke kommunikere korrekt med databasen.");
             ex.printStackTrace();
@@ -196,7 +189,6 @@ public class UserMapper {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 String username = rs.getString("username");
-                //    email = rs.getString("email");
                 String password = rs.getString("password");
                 int mobilNr = rs.getInt("mobil_nr");
                 int saldo = rs.getInt("saldo");
