@@ -35,7 +35,6 @@ public class BuildCupcake extends Command {
         String bottom = request.getParameter("bund");
         String topping = request.getParameter("top");
 
-
         if(tmpAntal.equals("") | bottom.equals("") | topping.equals("")) {
             request.setAttribute("BuildCupcakeBesked1", "Du udfyldte ikke alle felter");
             request.setAttribute("toppings", Initialisation.getToppingList());
@@ -45,7 +44,6 @@ public class BuildCupcake extends Command {
 
         int antal = Integer.parseInt(tmpAntal);
 
-
         Cupcake temp = new Cupcake(getBottom(bottoms, bottom), getTopping(toppings, topping), antal);
         cart.add(temp);
 
@@ -54,7 +52,6 @@ public class BuildCupcake extends Command {
         request.setAttribute("toppings", Initialisation.getToppingList());
         request.setAttribute("bottoms", Initialisation.getBottomsList());
         session.setAttribute("cart", cart);
-
 
         return "cupcakes";
 
